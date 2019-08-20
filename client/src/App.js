@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from './header';
 import Nav from './nav';
 import Main from './main';
+import MainContent from './main-content';
+import VehicleContent from './vehicle-content';
 import SearchForm from './search-form';
 import Footer from './footer';
 
@@ -16,6 +18,7 @@ function Index() {
       <Nav/>
       <Main/>
       <SearchForm/>
+      <MainContent/>
       <Footer/>
     </div>
     );
@@ -24,8 +27,10 @@ function Index() {
 function Vehicles() {
   return (
     <div>
+      <h2>Vehicles</h2>
       <Header/>
       <Nav/>
+      <VehicleContent/>
       <Footer/>
     </div>);
 }
@@ -33,6 +38,7 @@ function Vehicles() {
 function Finance() {
   return (
     <div>
+      <h2>Finance</h2>
       <Header/>
       <Nav/>
       <Footer/>
@@ -42,6 +48,7 @@ function Finance() {
 function About() {
   return (
     <div>
+      <h2>About</h2>
       <Header/>
       <Nav/>
       <Footer/>
@@ -51,6 +58,7 @@ function About() {
 function Contact() {
   return (
     <div>
+      <h2>Contact</h2>
       <Header/>
       <Nav/>
       <Footer/>

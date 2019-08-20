@@ -11,6 +11,7 @@ class Main extends React.Component {
         return (
             <div>
                 <img alt="A variety of cars."/>
+                <h1>Welcome to The Car Company</h1>
             </div>
         )
     }
