@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import Header from './header';
 import Nav from './nav';
 import Main from './main';
 import SearchForm from './search-form';
+import Footer from './footer';
 
 function Index() {
   //return <h2>Home</h2>;
@@ -14,24 +16,45 @@ function Index() {
       <Nav/>
       <Main/>
       <SearchForm/>
+      <Footer/>
     </div>
     );
 }
 
 function Vehicles() {
-  return <h2>Vehicles</h2>;
+  return (
+    <div>
+      <Header/>
+      <Nav/>
+      <Footer/>
+    </div>);
 }
 
 function Finance() {
-  return <h2>Finance</h2>;
+  return (
+    <div>
+      <Header/>
+      <Nav/>
+      <Footer/>
+    </div>);
 }
 
 function About() {
-  return <h2>About</h2>;
+  return (
+    <div>
+      <Header/>
+      <Nav/>
+      <Footer/>
+    </div>);
 }
 
 function Contact() {
-  return <h2>Contact</h2>;
+  return (
+    <div>
+      <Header/>
+      <Nav/>
+      <Footer/>
+    </div>);
 }
 
 function AppRouter() {
