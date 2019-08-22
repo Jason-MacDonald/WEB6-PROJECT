@@ -11,7 +11,7 @@ class Footer extends React.Component {
     // }
     render () {
         return (
-            <div class="footer-main-div">
+            <div className="footer-main-div">
                 <h2>Contact</h2>
                 <Contact/>
                 <Contact/>

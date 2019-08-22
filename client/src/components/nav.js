@@ -11,7 +11,7 @@ class Nav extends React.Component {
     // }
     render () {
         return (
-            <div class="nav-main-div">
+            <div className="nav-main-div">
                 <ul>
                     <li>Home</li>
                     <li>Vehicles</li>

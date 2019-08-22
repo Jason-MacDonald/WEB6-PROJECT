@@ -11,7 +11,7 @@ class Header extends React.Component {
     // }
     render () {
         return (
-            <div class="header-main-div">
+            <div className="header-main-div">
                 <p>The Car Company | enquiry@thecarcompany.co.nz</p>
             </div>
         )
