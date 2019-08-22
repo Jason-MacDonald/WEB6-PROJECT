@@ -2,16 +2,10 @@ import React from 'react';
 import Vehicle from './vehicle';
 
 class VehicleContent extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-            
-    //     }
-    // }
     render () {
         return (
             <div>
-                <h2>Featured Vehicles</h2>
+                <h2>Vehicle Results</h2>
                 <Vehicle/> 
                 <Vehicle/> 
                 <Vehicle/> 
