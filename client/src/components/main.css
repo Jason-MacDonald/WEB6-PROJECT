@@ -1,0 +1,10 @@
+.main-main-div {
+    background-color: blueviolet;
+    height: 500px;
+    position: relative;
+    top: -45px;
+}
+
+.main-main-div h1 {
+    text-align: right;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './header.css'
+
 class Header extends React.Component {
     // constructor(props) {
     //     super(props);
@@ -9,7 +11,7 @@ class Header extends React.Component {
     // }
     render () {
         return (
-            <div>
+            <div class="header-main-div">
                 <p>The Car Company | enquiry@thecarcompany.co.nz</p>
             </div>
         )

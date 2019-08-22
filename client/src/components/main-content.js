@@ -1,6 +1,8 @@
 import React from 'react';
 import Vehicle from './vehicle';
 
+import './main-content.css';
+
 class MainContent extends React.Component {
     // constructor(props) {
     //     super(props);
@@ -10,7 +12,7 @@ class MainContent extends React.Component {
     // }
     render () {
         return (
-            <div>
+            <div class="main-content-main-div">
                <Vehicle/> 
                <Vehicle/> 
                <Vehicle/> 

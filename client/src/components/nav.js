@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './nav.css'
+
 class Nav extends React.Component {
     // constructor(props) {
     //     super(props);
@@ -9,7 +11,7 @@ class Nav extends React.Component {
     // }
     render () {
         return (
-            <div>
+            <div class="nav-main-div">
                 <ul>
                     <li>Home</li>
                     <li>Vehicles</li>
