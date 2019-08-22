@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Header from './header';
-import Nav from './nav';
-import Main from './main';
-import MainContent from './main-content';
-import VehicleContent from './vehicle-content';
-import SearchForm from './search-form';
-import Footer from './footer';
+import Header from './components/header';
+import Nav from './components/nav';
+import Main from './components/main';
+import MainContent from './components/main-content';
+import VehicleContent from './components/vehicle-content';
+import SearchForm from './components/search-form';
+import Footer from './components/footer';
 
 function Index() {
   //return <h2>Home</h2>;
