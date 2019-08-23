@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './search-form.css'
+
 class SearchForm extends React.Component {
     // constructor(props) {
     //     super(props);
@@ -9,10 +11,10 @@ class SearchForm extends React.Component {
     // }
     render () {
         return (
-            <div>
+            <div className='search-form-main-div'>
                 <form>
                     <h2>Find a Car</h2>
-                    <input type="text" placeholder="Keywords..."/>
+                    <input type='text' placeholder='Keywords...'/>
                     {/* Add selects from other file */}
                     <select>
                         <option>Any Make</option>

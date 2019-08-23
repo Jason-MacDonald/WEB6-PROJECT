@@ -1,10 +1,12 @@
 import React from 'react';
 import Vehicle from './vehicle';
 
+import './vehicle-content.css';
+
 class VehicleContent extends React.Component {
     render () {
         return (
-            <div>
+            <div className='vehicle-content-main-div'>
                 <h2>Vehicle Results</h2>
                 <Vehicle/> 
                 <Vehicle/> 

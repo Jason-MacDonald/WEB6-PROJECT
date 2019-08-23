@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './vehicle.css';
+
 class Vehicles extends React.Component {
     render () {
         return (
-            <div>
+            <div className='vehicle-main-div'>
                 <img alt="Vehicle"/>
                 <p>2010 Subaru Legacy</p>
                 <p>Automatic</p>
