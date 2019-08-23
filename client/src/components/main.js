@@ -12,7 +12,6 @@ class Main extends React.Component {
     render () {
         return (
             <div className="main-main-div">
-                <img alt="A variety of cars."/>
                 <h1>Welcome to The Car Company</h1>
             </div>
         )

@@ -1,6 +1,33 @@
 .vehicle-main-div {
-    background-color: coral;
+    background-color: azure;
     display: inline-block;
-    width: 200px;
     margin: 20px;
+    padding: 10px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.151), 10px 10px 8px  rgba(0, 0, 0, 0.200), 15px 15px 8px  rgba(0, 0, 0, 0.250);
+    padding: 20px; 
+    border-radius: 5px;
+}
+
+.vehicle-main-div img {
+    /* bosrder-radius: 5px; */
+    width: 250px;
+    height: 200px;
+}
+
+.vehicle-main-div p {
+    font-style: italic;
+}
+
+#kms {
+    display: inline-block;
+}
+
+#price {
+    float: right;
+}
+
+#location {
+    color: rgb(46, 109, 204);
+    font-style: initial;
+    font-weight: 700;
 }

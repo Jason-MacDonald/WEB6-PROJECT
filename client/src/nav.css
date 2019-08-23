@@ -1,0 +1,8 @@
+.nav-main-div {
+    background-color: rgb(43, 128, 226);
+}
+
+.nav-main-div ul li {
+    display: inline-block;
+    margin: 30px 20px;
+}

@@ -1,10 +1,9 @@
 .header-main-div {
-    background-color: rgb(39, 214, 127);
+    background-color: rgb(31, 37, 94);
     height: 130px;
 }
 
 .header-main-div p {
-    background-color: rgb(87, 231, 20);
-    text-align: right;
+    color: rgb(255, 255, 255);
 }
 
