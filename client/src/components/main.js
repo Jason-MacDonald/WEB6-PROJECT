@@ -12,7 +12,7 @@ class Main extends React.Component {
     render () {
         return (
             <div className="main-main-div">
-                <h1>Welcome to The Car Company</h1>
+                <h1>Welcome to<br/>The Car Company</h1>
             </div>
         )
     }

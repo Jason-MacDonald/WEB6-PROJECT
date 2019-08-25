@@ -13,6 +13,10 @@ class MainContent extends React.Component {
     render () {
         return (
             <div className="main-content-main-div">
+               <div className='header'>
+                   <h2>Featured Vehicles</h2>
+               </div>
+
                <Vehicle/> 
                <Vehicle/> 
                <Vehicle/> 

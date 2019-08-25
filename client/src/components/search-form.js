@@ -39,21 +39,21 @@ class SearchForm extends React.Component {
                         <option>Automatic</option>
                         <option>Manual</option>
                     </select>
-                    <select>
+                    <select className="inline-block">
                         <option>Any Price</option>
                         <option>1k</option>
                         <option>2k</option>
                     </select>
 
-                    <p>to</p>
+                    <p className="inline-block">to</p>
 
-                    <select>
+                    <select className="inline-block">
                         <option>Any Price</option>
                         <option>1k</option>
                         <option>2k</option>
                     </select>
 
-                    <select>
+                    <select className="inline-block">
                         <option>Any Year</option>
                         <option>2019</option>
                         <option>2018</option>
@@ -63,14 +63,14 @@ class SearchForm extends React.Component {
 
                     <p>to</p>
                     
-                    <select>
+                    <select className="inline-block">
                         <option>Any Year</option>
                         <option>2019</option>
                         <option>2018</option>
                         <option>2017</option>
                         <option>2016</option>
                     </select>
-                    <input type="submit" value="Find Car"/>
+                    <input className="submit" type="submit" value="Find Car"/>
                 </form>
             </div>
         )

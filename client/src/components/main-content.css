@@ -1,3 +1,11 @@
 .main-content-main-div {
     background-color: aliceblue;
+    padding: auto;
+}
+
+.main-content-main-div div.header {
+    background-color: rgb(9, 67, 98); 
+    color: white;
+    text-align: center;
+    padding:35px;
 }

@@ -1,9 +1,12 @@
 .header-main-div {
-    background-color: rgb(31, 37, 94);
+    background-color: rgb(9, 67, 98);
     height: 130px;
 }
 
 .header-main-div p {
     color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 95px;
 }
 

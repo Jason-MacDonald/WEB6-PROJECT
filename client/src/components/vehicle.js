@@ -7,7 +7,7 @@ class Vehicles extends React.Component {
     render () {
         return (
             <div className='vehicle-main-div'>
-                <img alt="Vehicle" src={Faker.image.transport()}/>
+                <img alt='Vehicle' src={ require('../img/blue-flower.jpeg') } />
                 <h4>2019 Subaru Legacy</h4>
                 <p>Automatic</p>
                 <h4 id='kms'>999,999km</h4>

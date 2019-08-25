@@ -1,0 +1,27 @@
+.footer-main-div {
+    background-color: rgb(9, 67, 98);
+    color: white;
+    padding: 20px 10%;
+}
+
+.footer-contact {
+    display: inline-block;
+    width: 33.3%;
+}
+
+.footer-opening-hours {
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+}
+
+.footer-opening-hours div {
+    display: inline-block;
+    width: 33.3%;
+}
+
+.footer-locations {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+}

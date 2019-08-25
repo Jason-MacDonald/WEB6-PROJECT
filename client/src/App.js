@@ -1,19 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Header from './components/header';
+import Header from './components/header/header';
 import Main from './components/main';
 import MainContent from './components/main-content';
 import VehicleContent from './components/vehicle-content';
 import SearchForm from './components/search-form';
-import Footer from './components/footer';
+import Footer from './components/footer/footer';
+import Nav from './components/nav';
+import LoginForm from "./components/login-form/login-form";
 
-import './nav.css';
+//import './nav.css';
 
 function Index() {
   return (
     <div>
       <h2>Home</h2>
+      <LoginForm />
       <Header />
       <Nav />
       <Main />
@@ -65,33 +68,7 @@ function Contact() {
     </div>);
 }
 
-function Nav() {
-  return (
-    <div className="nav-main-div">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/vehicles/">Vehicles</Link>
-          </li>
-          <li>
-            <Link to="/finance/">Finance</Link>
-          </li>
-          <li>
-            <Link to="/about/">About</Link>
-          </li>
-          <li>
-            <Link to="/contact/">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  )
-}
-
-function AppRouter() {
+function App() {
   return (
     <Router>
       <div>
@@ -105,4 +82,4 @@ function AppRouter() {
   );
 }
 
-export default AppRouter;
+export default App;

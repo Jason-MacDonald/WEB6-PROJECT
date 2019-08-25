@@ -14,8 +14,13 @@
     height: 200px;
 }
 
+.vehicle-main-div h4 {
+   margin: 0;
+}
+
 .vehicle-main-div p {
     font-style: italic;
+    margin: 0;
 }
 
 #kms {

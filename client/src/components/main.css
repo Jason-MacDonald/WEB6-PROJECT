@@ -1,6 +1,15 @@
 .main-main-div {
     /* background-color: blueviolet; */
-    height: 500px;
-    width: 500px;
-    /* background-image: url("???"); */
+    height: 670px;
+    width: 100%;
+    background-image: url('../img/blue-flower.jpeg');
+    background-size: 100%;
 }
+
+.main-main-div h1{
+    position: absolute;
+    top: 400px;
+    left: 60%;
+    color: white;
+}
+

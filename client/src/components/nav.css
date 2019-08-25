@@ -1,0 +1,23 @@
+.nav-main-div {
+    background-color: rgb(43, 128, 226);
+    position: absolute;
+    width :80%;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.151), 10px 10px 8px  rgba(0, 0, 0, 0.200), 15px 15px 8px  rgba(21, 13, 136, 0.25); 
+    border-radius: 5px;
+    top: 120px;
+    left: 10%;
+    display: flex;
+    /* flex: 1; */
+}
+
+.nav-main-div ul {
+    list-style: none;
+    display: flex;
+    padding: 25px 25px;
+}
+
+.nav-main-div ul li {
+    padding: 10px 25px;
+}
+
+
