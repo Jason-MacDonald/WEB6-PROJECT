@@ -1,5 +1,5 @@
 import React from 'react';
-import Vehicle from '../vehicle';
+import Vehicle from '../vehicle/vehicle';
 
 import './main-content.css';
 
