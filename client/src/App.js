@@ -2,12 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from './components/header/header';
-import Main from './components/main';
-import MainContent from './components/main-content';
-import VehicleContent from './components/vehicle-content';
-import SearchForm from './components/search-form';
+import Main from './components/main/main';
+import MainContent from './components/main-content/main-content';
+import VehicleContent from './components/vehicle-content/vehicle-content';
+import SearchForm from './components/search-form/search-form';
 import Footer from './components/footer/footer';
-import Nav from './components/nav';
+import Nav from './components/nav/nav';
 import LoginForm from "./components/login-form/login-form";
 
 //import './nav.css';
