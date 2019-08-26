@@ -10,6 +10,7 @@ import Footer from './components/footer/footer';
 import Nav from './components/nav/nav';
 import LoginForm from "./components/login-form/login-form";
 import FinanceContent from './components/finance-content/finance-content'
+import AboutContent from './components/about-content/about-content'
 
 //import './nav.css';
 
@@ -56,6 +57,7 @@ function About() {
       <h2>About</h2>
       <Header />
       <Nav />
+      <AboutContent />
       <Footer />
     </div>);
 }
