@@ -9,6 +9,7 @@ import SearchForm from './components/search-form/search-form';
 import Footer from './components/footer/footer';
 import Nav from './components/nav/nav';
 import LoginForm from "./components/login-form/login-form";
+import FinanceContent from './components/finance-content/finance-content'
 
 //import './nav.css';
 
@@ -44,6 +45,7 @@ function Finance() {
       <h2>Finance</h2>
       <Header />
       <Nav />
+      <FinanceContent />
       <Footer />
     </div>);
 }
