@@ -11,6 +11,7 @@ import Nav from './components/nav/nav';
 import LoginForm from "./components/login-form/login-form";
 import FinanceContent from './components/finance-content/finance-content'
 import AboutContent from './components/about-content/about-content'
+import ContactContent from './components/contact-content/contact-content'
 
 //import './nav.css';
 
@@ -68,6 +69,7 @@ function Contact() {
       <h2>Contact</h2>
       <Header />
       <Nav />
+      <ContactContent />
       <Footer />
     </div>);
 }
