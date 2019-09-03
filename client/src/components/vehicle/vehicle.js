@@ -3,8 +3,7 @@ import Faker from 'faker';
 
 import './vehicle.css';
 
-class Vehicles extends React.Component {
-    render () {
+const Vehicles = () =>  {
         return (
             <div className='vehicle-main-div'>
                 <img alt='Vehicle' src={ require('../../img/blue-flower.jpeg') } />
@@ -16,6 +15,5 @@ class Vehicles extends React.Component {
             </div>
         )
     }
-}
 
 export default Vehicles;

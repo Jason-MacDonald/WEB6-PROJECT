@@ -2,9 +2,10 @@ import React from 'react';
 
 import './about-content.css';
 
-// Could be a function as only returns presentational data. Stateless.
-class AboutContent extends React.Component {
-    render () {
+// Example of changing classes to functions.
+//class AboutContent extends React.Component {
+const AboutContent = () => {
+    //render () {
         return (
             <div className="finance-content-main-div">
                 <h2>About</h2>
@@ -21,6 +22,6 @@ class AboutContent extends React.Component {
             </div>
         )
     }
-}
+//}
 
 export default AboutContent;
