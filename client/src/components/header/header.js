@@ -2,6 +2,7 @@ import React from 'react';
 
 import './header.css'
 
+// Could be a function as only returns presentational data. Stateless.
 class Header extends React.Component {
     // constructor(props) {
     //     super(props);

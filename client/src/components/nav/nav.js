@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import './nav.css'
 
+// Could be a function as only returns presentational data. Stateless.
 class Nav extends React.Component {
     render() {
         return (

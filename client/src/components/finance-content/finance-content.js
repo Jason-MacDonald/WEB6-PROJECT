@@ -2,6 +2,7 @@ import React from 'react';
 
 import './finance-content.css';
 
+// Could be a function as only returns presentational data. Stateless.
 class FinanceContent extends React.Component {
     render () {
         return (

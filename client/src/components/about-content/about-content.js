@@ -2,6 +2,7 @@ import React from 'react';
 
 import './about-content.css';
 
+// Could be a function as only returns presentational data. Stateless.
 class AboutContent extends React.Component {
     render () {
         return (

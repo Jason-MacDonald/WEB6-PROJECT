@@ -2,6 +2,7 @@ import React from 'react';
 
 import './main.css'
 
+// Could be a function as only returns presentational data. Stateless.
 class Main extends React.Component {
     // constructor(props) {
     //     super(props);
