@@ -18,7 +18,6 @@ import ContactContent from './components/contact-content/contact-content'
 function Index() {
   return (
     <div>
-      <h2>Home</h2>
       <LoginForm />
       <Header />
       <Nav />
@@ -33,7 +32,6 @@ function Index() {
 function Vehicles() {
   return (
     <div>
-      <h2>Vehicles</h2>
       <Header />
       <Nav />
       <VehicleContent />
@@ -44,7 +42,6 @@ function Vehicles() {
 function Finance() {
   return (
     <div>
-      <h2>Finance</h2>
       <Header />
       <Nav />
       <FinanceContent />
@@ -55,7 +52,6 @@ function Finance() {
 function About() {
   return (
     <div>
-      <h2>About</h2>
       <Header />
       <Nav />
       <AboutContent />
@@ -66,7 +62,6 @@ function About() {
 function Contact() {
   return (
     <div>
-      <h2>Contact</h2>
       <Header />
       <Nav />
       <ContactContent />

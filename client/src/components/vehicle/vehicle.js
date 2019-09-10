@@ -3,7 +3,7 @@ import Faker from 'faker';
 
 import './vehicle.css';
 
-const Vehicles = () =>  {
+const Vehicle = () =>  {
         return (
             <div className='vehicle-main-div'>
                 <img alt='Vehicle' src={ require('../../img/blue-flower.jpeg') } />
@@ -16,4 +16,4 @@ const Vehicles = () =>  {
         )
     }
 
-export default Vehicles;
+export default Vehicle;
