@@ -35,12 +35,13 @@ function updateVehicle(req, res) {
 
 };
 
-// TODO: DELETE a vehicle record.
+// TODO: DELETE a vehicle record, currently deletes item in last position.
 function deleteVehicle(req, res) {
-    req.on('end', () => {
+    body = '';
+    req.on('data', chunk => body += chunk.toString());
         
-        // TODO: Remove vehicle with provided id.
-
+    req.on('end', () => {
+        data.pop(JSON.parse(body)[0]);
         return res.end(`Vehicle Deleted`);
     });
     req.on('error', error => {
