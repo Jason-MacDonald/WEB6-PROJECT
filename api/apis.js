@@ -4,11 +4,18 @@ const url = require('url');
 const data = require('../data');
 const port = 8080;
 
-function vehicleList(req, res) {
+// GET a list of all vehicles.
+function getVehicleList(req, res) {
     res.statusCode = 200;
     res.end(JSON.stringify(data));
 };
 
+// TODO: GET record of one vehicle.
+function getVehicle(req, res) {
+
+};
+
+// POST (create) a vehicle record.
 function addVehicle(req, res) {
     let body = '';
     req.on('data', chunk => body += chunk.toString());
@@ -21,8 +28,27 @@ function addVehicle(req, res) {
         res.statusCode = 400;
         return res.end(error);
     });
-}
+};
 
+// TODO: PATCH (update) a vehicle record.
+function updateVehicle(req, res) {
+
+};
+
+// TODO: DELETE a vehicle record.
+function deleteVehicle(req, res) {
+    req.on('end', () => {
+        
+        // TODO: Remove vehicle with provided id.
+
+        return res.end(`Vehicle Deleted`);
+    });
+    req.on('error', error => {
+        return res.end(error);
+    });
+};
+
+// Error.
 function errorRequest(req, res) {
     res.statusCode = 404;
     res.end(`This api is not supported!`);
@@ -34,10 +60,17 @@ const server = http.createServer((req, res) => {
     if (urlVehicle.pathname === '/api/vehicle') {
         switch (req.method) {
             case 'GET':
-                vehicleList(req, res);
-                break;
+                // TODO: GET request for single vehicle.
+                getVehicleList(req, res);
+                break;             
             case 'POST':
                 addVehicle(req, res);
+                break;
+            //case 'PATCH':
+                //updateVehicle(req, res);
+                //break;
+            case 'DELETE':
+                deleteVehicle(req, res);
                 break;
             default:
                 errorRequest(req, res);
@@ -50,4 +83,3 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => console.info(`Server started on port ${port}.`));
-
