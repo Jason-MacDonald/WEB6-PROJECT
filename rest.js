@@ -16,9 +16,13 @@ const knex = require('knex') (
 );
 app.locals.knex = knex;
 
-//
+// vehicle requests
+router.get('/vehicles', routes.vehicleList.getAllVehicles);
 
-app.use('api', router);
+// account requests
+router.get('/accounts', routes.accountList.getAllAccounts);
+
+app.use('/api', router);
 
 app.listen(config.APIServerPort, () => {
     console.log(`Server started on port ${config.APIServerPort}`);
