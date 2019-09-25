@@ -1,4 +1,4 @@
-function checkID(res, req, next) {
+function checkID(req, res, next) {
     const id = +req.params.id;
     if(Number.isInteger(id)) {
         next();
