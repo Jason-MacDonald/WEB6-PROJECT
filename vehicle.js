@@ -7,26 +7,26 @@ function getAllVehicles(req, res, next) {
         .catch(error => res.status(500).json(error))
 };
 
-// function getVehicle(req, res, next) {
-//     const {knex} = req.app.locals;
-// };
+function getVehicle(req, res, next) {
+    const {knex} = req.app.locals;
+};
 
-// function postVehicle(req, res, next) {
-//     const {knex} = req.app.locals;
-// };
+function postVehicle(req, res, next) {
+    const {knex} = req.app.locals;
+};
 
-// function patchVehicle(req, res, next) {
-//     const {knex} = req.app.locals;
-// };
+function patchVehicle(req, res, next) {
+    const {knex} = req.app.locals;
+};
 
-// function deleteVehicle(req, res, next) {
-//     const {knex} = req.app.locals;
-// };
+function deleteVehicle(req, res, next) {
+    const {knex} = req.app.locals;
+};
 
 module.exports = {
-    getAllVehicles//,
-    // getVehicle,
-    // postVehicle,
-    // patchVehicle,
-    // deleteVehicle
+    getAllVehicles,
+    getVehicle,
+    postVehicle,
+    patchVehicle,
+    deleteVehicle
 };
