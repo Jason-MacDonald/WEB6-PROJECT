@@ -26,6 +26,10 @@ router.delete('/vehicles/:id', middleware.checkID, routes.vehicleList.deleteVehi
 
 // account requests
 router.get('/accounts', routes.accountList.getAllAccounts);
+router.get('/accounts/:id', middleware.checkID, routes.accountList.getAccount);
+router.post('/accounts', jsonParser, routes.accountList.postAccount);
+router.patch('/accounts/:id', jsonParser, middleware.checkID, routes.accountList.patchAccount);
+router.delete('/accounts/:id', middleware.checkID, routes.accountList.deleteAccount);
 
 app.use('/api', router);
 
