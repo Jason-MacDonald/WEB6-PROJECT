@@ -31,6 +31,13 @@ router.post('/accounts', jsonParser, routes.accountList.postAccount);
 router.patch('/accounts/:id', jsonParser, middleware.checkID, routes.accountList.patchAccount);
 router.delete('/accounts/:id', middleware.checkID, routes.accountList.deleteAccount);
 
+// account requests
+router.get('/admin', routes.accountList.getAlladmins);
+router.get('/admin/:id', middleware.checkID, routes.accountList.getAdmin);
+router.post('/admin', jsonParser, routes.accountList.postAdmin);
+router.patch('/admin/:id', jsonParser, middleware.checkID, routes.accountList.patchAdmin);
+router.delete('/admin/:id', middleware.checkID, routes.accountList.deleteAdmin);
+
 app.use('/api', router);
 
 app.listen(config.APIServerPort, () => {
