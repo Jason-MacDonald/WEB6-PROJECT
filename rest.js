@@ -32,7 +32,7 @@ router.patch('/accounts/:id', jsonParser, middleware.checkID, routes.accountList
 router.delete('/accounts/:id', middleware.checkID, routes.accountList.deleteAccount);
 
 // account requests
-router.get('/admin', routes.accountList.getAlladmins);
+router.get('/admin', routes.accountList.getAdmins);
 router.get('/admin/:id', middleware.checkID, routes.accountList.getAdmin);
 router.post('/admin', jsonParser, routes.accountList.postAdmin);
 router.patch('/admin/:id', jsonParser, middleware.checkID, routes.accountList.patchAdmin);
