@@ -10,6 +10,7 @@ function getAllVehicles(req, res) {
 function getVehicle(req, res) {
     const {knex} = req.app.locals;
     const {id} = req.params;
+    console.log(req.params);
     knex    
         .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
         .from('vehicle')
@@ -52,7 +53,7 @@ function patchVehicle(req, res, next) {
         .update(payload)
         .then(response => { 
             if(response) {
-                res.status(204).json();
+                res.status(204).json(`Vehicle has been updated.`);
             }
             else {
                 return res.status(404).json(`Vehicle with id ${id} not found`);
@@ -72,7 +73,7 @@ function deleteVehicle(req, res, next) {
                 res.status(200).json(`Vehicle with id ${id} has been removed`);
             }
             else {
-                res.status(404).json(`Vehicle with id ${id} is not found`)
+                res.status(404).json(`Vehicle with id ${id} is not found`);
             }
         })
         .catch(error => res.status(500).json(error));

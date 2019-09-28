@@ -52,7 +52,7 @@ function patchAccount(req, res, next) {
         .update(payload)
         .then(response => {
             if(response) {
-                res.status(204).json();
+                res.status(204).json(`Account has been updated.`);
             }
             else {
                 return res.status(404).json(`Account with ID ${id} cannot be found.`)

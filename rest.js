@@ -24,6 +24,8 @@ router.post('/vehicles', jsonParser, routes.vehicleList.postVehicle);
 router.patch('/vehicles/:id', jsonParser, middleware.checkID, routes.vehicleList.patchVehicle);
 router.delete('/vehicles/:id', middleware.checkID, routes.vehicleList.deleteVehicle);
 
+//router.get('/vehicles/:id', middleware.checkID, routes.vehicleList.getVehicle);
+
 // account requests
 router.get('/accounts', routes.accountList.getAllAccounts);
 router.get('/accounts/:id', middleware.checkID, routes.accountList.getAccount);
@@ -31,12 +33,12 @@ router.post('/accounts', jsonParser, routes.accountList.postAccount);
 router.patch('/accounts/:id', jsonParser, middleware.checkID, routes.accountList.patchAccount);
 router.delete('/accounts/:id', middleware.checkID, routes.accountList.deleteAccount);
 
-// account requests
-router.get('/admin', routes.accountList.getAdmins);
-router.get('/admin/:id', middleware.checkID, routes.accountList.getAdmin);
-router.post('/admin', jsonParser, routes.accountList.postAdmin);
-router.patch('/admin/:id', jsonParser, middleware.checkID, routes.accountList.patchAdmin);
-router.delete('/admin/:id', middleware.checkID, routes.accountList.deleteAdmin);
+// admin requests
+router.get('/admin', routes.adminList.getAdmins);
+router.get('/admin/:id', middleware.checkID, routes.adminList.getAdmin);
+router.post('/admin', jsonParser, routes.adminList.postAdmin);
+router.patch('/admin/:id', jsonParser, middleware.checkID, routes.adminList.patchAdmin);
+router.delete('/admin/:id', middleware.checkID, routes.adminList.deleteAdmin);
 
 app.use('/api', router);
 
