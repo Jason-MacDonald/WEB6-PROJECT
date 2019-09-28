@@ -24,7 +24,8 @@ router.post('/vehicles', jsonParser, routes.vehicleList.postVehicle);
 router.patch('/vehicles/:id', jsonParser, middleware.checkID, routes.vehicleList.patchVehicle);
 router.delete('/vehicles/:id', middleware.checkID, routes.vehicleList.deleteVehicle);
 
-//router.get('/vehicles/:id', middleware.checkID, routes.vehicleList.getVehicle);
+router.get('/vehicles/:make/:model/:body/:transmission/:minYear/:maxYear/:minPrice/:maxPrice/:minKMS/:maxKMS', routes.vehicleList.getVehicleUseParams);
+
 
 // account requests
 router.get('/accounts', routes.accountList.getAllAccounts);
