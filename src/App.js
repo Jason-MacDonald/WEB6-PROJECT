@@ -18,7 +18,7 @@ import ContactContent from './components/contact-content/contact-content'
 function Index() {
   return (
     <div>
-      <LoginForm />
+      {/* <LoginForm /> */}
       <Header />
       <Nav />
       <Main />
