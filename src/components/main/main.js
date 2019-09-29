@@ -1,11 +1,12 @@
 import React from 'react';
 
 import './main.css'
+import SearchForm from '../search-form/search-form';
 
 const Main = () => {
     return (
         <div className="main-main-div">
-            <h1>Welcome to<br/>The Car Company</h1>
+            <SearchForm />
         </div>
     )
 }
