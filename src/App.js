@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Header from './components/header/header';
 import Main from './components/main/main';
 import MainContent from './components/main-content/main-content';
 import VehicleContent from './components/vehicle-content/vehicle-content';
@@ -19,10 +18,9 @@ function Index() {
   return (
     <div>
       {/* <LoginForm /> */}
-      <Header />
       <Nav />
       <Main />
-      <SearchForm />
+      {/* <SearchForm /> */}
       <MainContent />
       <Footer />
     </div>
@@ -32,7 +30,6 @@ function Index() {
 function Vehicles() {
   return (
     <div>
-      <Header />
       <Nav />
       <VehicleContent />
       <Footer />
@@ -42,7 +39,6 @@ function Vehicles() {
 function Finance() {
   return (
     <div>
-      <Header />
       <Nav />
       <FinanceContent />
       <Footer />
@@ -52,7 +48,6 @@ function Finance() {
 function About() {
   return (
     <div>
-      <Header />
       <Nav />
       <AboutContent />
       <Footer />
@@ -62,7 +57,6 @@ function About() {
 function Contact() {
   return (
     <div>
-      <Header />
       <Nav />
       <ContactContent />
       <Footer />

@@ -5,11 +5,14 @@ import './nav.css'
 
 const Nav = () => {
     return (
-        <div className="nav-main-div">
-            <nav>
-                <ul>
-                    <li>
-                        <h1>The car company</h1>
+        <div >
+            <div className="header-main-div">
+                <p>The Car Company | enquiry@thecarcompany.co.nz</p>
+            </div>
+            <nav className="nav-main-div">
+                <ul className="nav-wrapper">
+                    <li id="nav-logo">
+                        <Link to="/"><h2>The car company</h2></Link>
                     </li>
 
                     <li>
