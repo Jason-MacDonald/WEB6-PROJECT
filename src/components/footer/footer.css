@@ -2,26 +2,35 @@
     background-color: rgb(9, 67, 98);
     color: white;
     padding: 20px 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-flow: row;
 }
 
-.footer-contact {
-    display: inline-block;
-    width: 33.3%;
-}
+/* .footer-contact {
+    width: 30%;
+} */
 
 .footer-opening-hours {
-    display: inline-block;
-    width: 33.3%;
     text-align: center;
-}
-
-.footer-opening-hours div {
-    display: inline-block;
-    width: 33.3%;
+    /* width: 30%; */
 }
 
 .footer-locations {
-    display: inline-block;
-    width: 30%;
     text-align: right;
+    /* width: 30%; */
+    
+}
+
+.contact {
+    padding: 10px;
+}
+
+.hours {
+    padding: 10px;
+}
+
+.location {
+    padding: 10px;
 }
