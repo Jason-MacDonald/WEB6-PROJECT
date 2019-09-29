@@ -7,27 +7,28 @@ class VehicleContent extends React.Component {
     render () {
         return (
             <div className='vehicle-content-main-div'>
-                <h2>Vehicle Results</h2>
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
-                <Vehicle/>
+                <div className="vehicles-wrapper">
+                    <Vehicle/> 
+                    <Vehicle/> 
+                    <Vehicle/> 
+                    <Vehicle/> 
+                    <Vehicle/> 
+                    <Vehicle/> 
+                    <Vehicle/> 
+                    <Vehicle/> 
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                    <Vehicle/>
+                </div>
 
                 <VehicleNav/>
             </div>
@@ -38,7 +39,7 @@ class VehicleContent extends React.Component {
 class VehicleNav extends React.Component {
     render () {
         return (
-            <div>
+            <div className="page-nav-wrapper">
                 <button>First</button>
                 <button>Back</button>
                 <button>1</button>

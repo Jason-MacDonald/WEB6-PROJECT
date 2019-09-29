@@ -16,15 +16,16 @@ class MainContent extends React.Component {
                <div className='header'>
                    <h2>Featured Vehicles</h2>
                </div>
-
-               <Vehicle/> 
-               <Vehicle/> 
-               <Vehicle/> 
-               <Vehicle/> 
-               <Vehicle/> 
-               <Vehicle/> 
-               <Vehicle/> 
-               <Vehicle/> 
+                <div className="featured-wrapper">
+                <Vehicle/> 
+                <Vehicle/> 
+                <Vehicle/> 
+                <Vehicle/> 
+                <Vehicle/> 
+                <Vehicle/> 
+                <Vehicle/> 
+                <Vehicle/> 
+               </div>
             </div>
         )
     }

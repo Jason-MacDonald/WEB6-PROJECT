@@ -1,7 +1,7 @@
 .search-form-main-div {
     
     background-color: rgb(9, 67, 98); 
-    width: 500px;
+    max-width: 500px;
     padding: 35px;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.151), 10px 10px 8px  rgba(0, 0, 0, 0.200), 15px 15px 8px  rgba(21, 13, 136, 0.25); 
     border-radius: 5px;

@@ -1,6 +1,5 @@
 .main-content-main-div {
     background-color: aliceblue;
-    padding: auto;
 }
 
 .main-content-main-div div.header {
@@ -8,4 +7,11 @@
     color: white;
     text-align: center;
     padding:35px;
+}
+
+.featured-wrapper {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    padding: 3% 0;
 }

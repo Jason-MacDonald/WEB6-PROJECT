@@ -1,3 +1,29 @@
 .vehicle-content-main-div {
-    background-color: cadetblue;
+    background-color: aliceblue;
+    padding-top: 7%;
+}
+
+.vehicles-wrapper {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+.page-nav-wrapper {
+    display: flex;
+    padding: 2% 30px;
+    background-color: rgb(18, 177, 240);
+}
+
+.page-nav-wrapper button {
+    flex-grow: 1;
+    padding: 20px;
+    margin: 3px;
+    background-color: rgb(9, 67, 98);
+    border: 0;
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    border-radius: 5px;
 }
