@@ -1,7 +1,15 @@
 .contact-content-main-div {
     display: flex;
+    padding: 100px 0 50px 0;
+    justify-content: space-evenly;
 }
 
-.contact-content-main-div input {
+.contact-content-main-div input, .contact-content-main-div textarea {
     display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.contact-content-main-div form {
+    
 }
