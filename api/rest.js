@@ -17,6 +17,14 @@ const knex = require('knex') (
 );
 app.locals.knex = knex;
 
+//middleware to add headers.
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 // vehicle requests
 router.get('/vehicles', routes.vehicleList.getAllVehicles);
 router.get('/vehicles/:id', middleware.checkID, routes.vehicleList.getVehicle);

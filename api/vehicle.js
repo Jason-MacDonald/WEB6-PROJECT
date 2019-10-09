@@ -97,11 +97,11 @@ function getVehicleUseParams(req, res) {
         .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
         .from('vehicle')
         .where(function () {
-            if(make != 'any')
+            if(make != 'Any Make')
                 this.where('make', `${make}`);
         })
         .where(function () {
-            if(model != 'any')
+            if(model != 'Any Model')
                 this.where('model', `${model}`)
         })
         .where(function () {

@@ -6,15 +6,15 @@ import './search-form.css'
 const dataSource = [
     ['Any Make', []],
     ['Audi', ['A4', 'TT']],
-    ['BMW', ['330i']], 
+    ['BMW', ['330i']],
     ['Chevrolet', ['Sonic']],
-    ['Ford', ['Courier', 'Ecosport', 'Fairmont', 'Falcon', 'Kuga', 'Laser', 'Ranger', 'Transit']], 
-    ['Holden'], 
-    ['Honda'], 
-    ['Hyundai'], 
-    ['LDV'], 
-    ['Lexus'], 
-    ['Mazda'], 
+    ['Ford', ['Courier', 'Ecosport', 'Fairmont', 'Falcon', 'Kuga', 'Laser', 'Ranger', 'Transit']],
+    ['Holden'],
+    ['Honda'],
+    ['Hyundai'],
+    ['LDV'],
+    ['Lexus'],
+    ['Mazda'],
     ['Mitsubishi']
 ];
 
@@ -24,23 +24,23 @@ const modelItems = [];
 let selectedMake = 4; //TODO: Update index depending on make chosen in drop down.
 
 // eslint-disable-next-line
-for(const [index, value] of dataSource.entries()) {
+for (const [index, value] of dataSource.entries()) {
     makeItems.push(<option key={index}>{value[0]}</option>)
 }
 // eslint-disable-next-line
-for(const [index, value] of dataSource[selectedMake][1].entries()) {
+for (const [index, value] of dataSource[selectedMake][1].entries()) {
     modelItems.push(<option key={index}>{value}</option>)
 }
 // eslint-disable-next-line
-for(const [index, value] of dataSource.entries()) {
+for (const [index, value] of dataSource.entries()) {
     makeItems.push(<option key={index}>{value[0]}</option>)
 }
 
 class SearchForm extends React.Component {
-    render () {
+    render() {
 
         const bodyOptions = ['Any Body', 'Convertable', 'Coupe', 'Hatchback', 'Sedan', 'Station Wagon', 'RV/SUV', 'Ute', 'Van'];
-        
+
         const yearOptions = [];
         const currentYear = new Date().getFullYear();
         for (let i = (currentYear); i > (currentYear - 50); i--) {
@@ -54,28 +54,28 @@ class SearchForm extends React.Component {
 
         return (
             <div className='search-form-main-div'>
-                <form>
+                <form method='GET' action='/vehicles'>
                     <h2>Find a Car</h2>
-                    <input type='text' placeholder='Keywords...'/>
-                    <select id='DDmake'>
+                    <input type='text' placeholder='Keywords...' />
+                    <select name='make'>
                         {makeItems};
                     </select>
-                    <select>
+                    <select name='model'>
                         <option>Any Model</option>
                         {modelItems};
                     </select>
-                    <select>
+                    <select name='body'>
                         {bodyOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
                     </select>
-                    <select>
+                    <select name='transmission'>
                         <option>Any Transmission</option>
                         <option>Automatic</option>
                         <option>Manual</option>
                         <option>Tiptronic</option>
                     </select>
-                    <select className="inline-block">
+                    <select className="inline-block" name='minPrice'>
                         <option>Any Price</option>
                         {priceOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
@@ -84,14 +84,14 @@ class SearchForm extends React.Component {
 
                     <p className="inline-block">to</p>
 
-                    <select className="inline-block">
+                    <select className="inline-block" name='maxPrice'>
                         <option>Any Price</option>
                         {priceOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
                     </select>
 
-                    <select className="inline-block">
+                    <select className="inline-block" name='minYear'>
                         <option>Any Year</option>
                         {priceOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
@@ -99,14 +99,14 @@ class SearchForm extends React.Component {
                     </select>
 
                     <p>to</p>
-                    
-                    <select className="inline-block">
-                    <option>Any Year</option>
+
+                    <select className="inline-block" name='maxYear'>
+                        <option>Any Year</option>
                         {yearOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
                     </select>
-                    <input className="submit" type="submit" value="Find Car"/>
+                    <input className="submit" type="submit" value="Find Car" />
                 </form>
             </div>
         )

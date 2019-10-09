@@ -17,14 +17,18 @@ class MainContent extends React.Component {
                    <h2>Featured Vehicles</h2>
                </div>
                 <div className="featured-wrapper">
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
-                <Vehicle/> 
+                {/* <Vehicle id={1}/> 
+                    <Vehicle id={2}/> 
+                    <Vehicle id={3}/> 
+                    <Vehicle id={4}/> 
+                    <Vehicle id={5}/> 
+                    <Vehicle id={6}/> 
+                    <Vehicle id={7}/> 
+                    <Vehicle id={8}/> 
+                    <Vehicle id={9}/> 
+                    <Vehicle id={10}/> 
+                    <Vehicle id={11}/> 
+                    <Vehicle id={12}/>  */}
                </div>
             </div>
         )

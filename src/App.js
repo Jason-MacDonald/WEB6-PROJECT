@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from './components/main/main';
 import MainContent from './components/main-content/main-content';
 import VehicleContent from './components/vehicle-content/vehicle-content';
-import SearchForm from './components/search-form/search-form';
+//import SearchForm from './components/search-form/search-form';
 import Footer from './components/footer/footer';
 import Nav from './components/nav/nav';
 import LoginForm from "./components/login-form/login-form";
@@ -63,6 +63,14 @@ function Contact() {
     </div>);
 }
 
+function Login() {
+  return (
+    <div>
+      <Nav/>
+      <LoginForm />
+    </div>);
+}
+
 function App() {
   return (
     <Router>
@@ -72,6 +80,7 @@ function App() {
         <Route path="/finance/" component={Finance} />
         <Route path="/about/" component={About} />
         <Route path="/contact/" component={Contact} />
+        <Route path="/login/" component={Login} />
       </div>
     </Router>
   );
