@@ -1,3 +1,5 @@
+// Defines the database connection and server port for the API.
+
 const APIServerPort = 4200;
 
 const database = {

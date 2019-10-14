@@ -1,3 +1,5 @@
+// vehicle.js holds the API calls for the Vehicle table in th MySQL database.
+// getAllVehicles   Returns all Vehicle Records.
 function getAllVehicles(req, res) {
     const {knex} = req.app.locals;
     knex
@@ -7,6 +9,7 @@ function getAllVehicles(req, res) {
         .catch(error => res.status(500).json(error))
 };
 
+// getVehicle       Returns single vehicle record based on ID.
 function getVehicle(req, res) {
     const {knex} = req.app.locals;
     const {id} = req.params;
@@ -26,6 +29,7 @@ function getVehicle(req, res) {
     .catch(error => res.status(500).json(error))
 };
 
+// postVehicle      Creates a new vehicle record with auto-incrementID.
 function postVehicle(req, res, next) {
     const {knex} = req.app.locals;
     const payload = req.body;
@@ -44,6 +48,7 @@ function postVehicle(req, res, next) {
     };
 };
 
+// patchVehicle         Updates a single vehicle record based on ID.
 function patchVehicle(req, res, next) {
     const {knex} = req.app.locals;
     const {id} = req.params;
@@ -62,6 +67,7 @@ function patchVehicle(req, res, next) {
         .catch(error => res.status(500).json(error));
 };
 
+// deleteVehicle        Deletes a single vehicle based on ID.
 function deleteVehicle(req, res, next) {
     const {knex} = req.app.locals;
     const {id} = req.params;
@@ -79,6 +85,7 @@ function deleteVehicle(req, res, next) {
         .catch(error => res.status(500).json(error));
 };
 
+// getVehicleUseParams      Returns a list of vehicles based on the provided params.
 function getVehicleUseParams(req, res) {
     const {knex} = req.app.locals;
 
@@ -93,6 +100,8 @@ function getVehicleUseParams(req, res) {
     const minKMS = req.params.minKMS;
     const maxKMS = req.params.maxKMS;
 
+    // Where clauses will check if the parameter has been entered (not including default) 
+    // and retrieve the appropriate vehicles.
     knex    
         .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
         .from('vehicle')

@@ -1,3 +1,4 @@
+// Ensures that an id parameter is an integer.
 function checkID(req, res, next) {
     const id = +req.params.id;
     if(Number.isInteger(id)) {

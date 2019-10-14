@@ -1,3 +1,5 @@
+// account.js holds the API calls for the Accounts table in th MySQL database.
+// getAllAccounts   Returns all Account Records
 function getAllAccounts(req, res, next) {
     const {knex} = req.app.locals;
     knex
@@ -7,6 +9,7 @@ function getAllAccounts(req, res, next) {
         .catch(error => res.status(500).json(error))
 };
 
+// getAccount       Returns a single Account record based on ID.
 function getAccount(req, res, next) {
     const {knex} = req.app.locals;
     const {id} = req.params;
@@ -25,6 +28,7 @@ function getAccount(req, res, next) {
     .catch(error => res.status(500).json(error))
 };
 
+// postAccount      Creates a new Account Record with an auto-increment ID.
 function postAccount(req, res, next) {
     const {knex} = req.app.locals;
     const payload = req.body;
@@ -43,6 +47,7 @@ function postAccount(req, res, next) {
     }
 };
 
+// patchAccount     Updates a single account record based on ID.
 function patchAccount(req, res, next) {
     const {knex} = req.app.locals;
     const {id} = req.params;
@@ -61,6 +66,7 @@ function patchAccount(req, res, next) {
     .catch(error => res.status(500).json(error));
 };
 
+// deleteAccount    Deletes an Account Record based on ID.
 function deleteAccount(req, res, next) {
     const {knex} = req.app.locals;
     const {id} = req.params;
