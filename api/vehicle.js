@@ -3,7 +3,7 @@
 function getAllVehicles(req, res) {
     const {knex} = req.app.locals;
     knex
-        .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
+        .select('year', 'transmission', 'description', 'price', 'kms', 'location', 'seats', 'model', 'make', 'body', 'featured')
         .from('vehicle')
         .then(data => res.status(200).json(data))
         .catch(error => res.status(500).json(error))
@@ -15,7 +15,7 @@ function getVehicle(req, res) {
     const {id} = req.params;
     console.log(req.params);
     knex    
-        .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
+        .select('year', 'transmission', 'description', 'price', 'kms', 'location', 'seats', 'model', 'make', 'body', 'featured')
         .from('vehicle')
         .where({id: `${id}`})
         .then(data => {
@@ -31,9 +31,10 @@ function getVehicle(req, res) {
 
 // postVehicle      Creates a new vehicle record with auto-incrementID.
 function postVehicle(req, res, next) {
+
     const {knex} = req.app.locals;
     const payload = req.body;
-    const mandatoryColumns = ['year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured'];
+    const mandatoryColumns = ['year', 'transmission', 'description', 'price', 'kms', 'location', 'seats', 'model', 'make', 'body', 'featured'];
     const payloadKeys = Object.keys(payload);
     const mandatoryColumnsExist = mandatoryColumns.every(mc => payloadKeys.includes(mc));
 
@@ -89,7 +90,7 @@ function deleteVehicle(req, res, next) {
 function getFeaturedVehicles(req, res) {
     const {knex} = req.app.locals;
     knex    
-        .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
+        .select('year', 'transmission', 'description', 'price', 'kms', 'location', 'seats', 'model', 'make', 'body', 'featured')
         .from('vehicle')
         .where({featured: true})
         .then(data => {
@@ -123,7 +124,7 @@ function getVehicleUseParams(req, res) {
     // Where clauses will check if the parameter has been entered (not including default) 
     // and retrieve the appropriate vehicles.
     knex    
-        .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
+        .select('year', 'transmission', 'description', 'price', 'kms', 'location', 'seats', 'model', 'make', 'body', 'featured')
         .from('vehicle')
         .where(function () {
             if(make != 'Any+Make' && make != undefined)
