@@ -17,10 +17,9 @@ class VehicleContent extends React.Component {
             maxYear: props.maxYear,
             minPrice: props.minPrice,
             maxPrice: props.maxPrice,
-            minKms: props.minKms,
-            maxKms: props.maxKms
+            minKms: 10, //props.minKms,
+            maxKms: 10000000//props.maxKms
         })
-        console.log(props);
     }
 
     componentDidMount() {

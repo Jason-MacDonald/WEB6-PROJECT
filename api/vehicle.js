@@ -126,44 +126,44 @@ function getVehicleUseParams(req, res) {
         .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
         .from('vehicle')
         .where(function () {
-            if(make != 'Any Make')
+            if(make != 'Any+Make')
                 this.where('make', `${make}`);
         })
         .where(function () {
-            if(model != 'Any Model')
+            if(model != 'Any+Model')
                 this.where('model', `${model}`)
         })
         .where(function () {
-            if(body != 'Any Body')
+            if(body != 'Any+Body')
                 this.where('body', `${body}`)
         })
         .where(function () {
-            if(transmission != 'Any Transmission')
+            if(transmission != 'Any+Transmission')
                 this.where('transmission', `${transmission}`)
         })
         .where(function () {
-            if(minYear != 'Any Year')
+            if(minYear != 'Any+Year')
                 this.where('year', '>=', `${minYear}`)
         })
         .where(function () {
-            if(maxYear != 'Any Year')
+            if(maxYear != 'Any+Year')
                 this.where('year', '<=', `${maxYear}`)
         })
         .where(function () {
-            if(minPrice != 'Any Price')
+            if(minPrice != 'Any+Price')
                 this.where('price', '>=', `${minPrice}`)
         })
         .where(function () {
-            if(maxPrice != 'Any Price')
+            if(maxPrice != 'Any+Price')
                 this.where('price', '<=', `${maxPrice}`)
         })
         .where(function () {
-            if(minKms != 'Any Kms')
-                this.where('km', '>=', `${minKMS}`)
+            if(minKms != 'Any+Kms')
+                this.where('km', '>=', `${minKms}`)
         })
         .where(function () {
-            if(maxKms != 'Any Kms')
-                this.where('km', '<=', `${maxKMS}`)
+            if(maxKms != 'Any+Kms')
+                this.where('km', '<=', `${maxKms}`)
         })     
         .then(data => {
             if(data.length > 0) {

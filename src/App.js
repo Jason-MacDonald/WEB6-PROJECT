@@ -29,23 +29,38 @@ function Index() {
 }
 
 function Vehicles(props) {
+  // https://www.developerdrive.com/turning-the-querystring-into-a-json-object-using-javascript/
+  var pairs = props.location.search.slice(1).split('&');
+
+  var result = {};
+
+  pairs.forEach(function(pair) {
+    pair = pair.split('=');
+    result[pair[0]] = decodeURIComponent(pair[1] || '');
+  });
+
+  var queryString = JSON.parse(JSON.stringify(result));
+  console.log(queryString);
+
   return (
     <div>
       <Nav />
       <VehicleContent   
-          make='Any Make' 
-          model='Any Model' 
-          body='Any Body' 
-          transmission='Any Transmission' 
-          minYear='Any Year' 
-          maxYear='Any Year' 
-          minPrice='Any Price' 
-          maxPrice='Any Price' 
-          minKms='Any Kms' 
-          maxKms='Any Kms'/>
+          make={queryString.make} 
+          model={queryString.model} 
+          body={queryString.body} 
+          transmission={queryString.transmission} 
+          minYear={queryString.minYear} 
+          maxYear={queryString.maxYear}
+          minPrice={queryString.minPrice} 
+          maxPrice={queryString.maxPrice} 
+          minKms={queryString.minKms} 
+          maxKms={queryString.maxKms} />
       <Footer />
     </div>);
 }
+
+
 
 function Finance() {
   return (

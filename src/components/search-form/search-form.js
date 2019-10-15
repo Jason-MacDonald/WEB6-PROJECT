@@ -106,6 +106,20 @@ class SearchForm extends React.Component {
                             return <option key={index}>{value}</option>
                         })}
                     </select>
+
+                    <select className="inline-block" name='minKms'>
+                        <option>Any Kms</option>
+                        {yearOptions.map((value, index) => {
+                            return <option key={index}>{value}</option>
+                        })}
+                    </select>
+
+                    <select className="inline-block" name='maxKms'>
+                        <option>Any Kms</option>
+                        {yearOptions.map((value, index) => {
+                            return <option key={index}>{value}</option>
+                        })}
+                    </select>
                     <input className="submit" type="submit" value="Find Car" />
                 </form>
             </div>
