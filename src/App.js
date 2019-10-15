@@ -12,6 +12,7 @@ import FinanceContent from './components/finance-content/finance-content'
 import AboutContent from './components/about-content/about-content'
 import ContactContent from './components/contact-content/contact-content'
 import AddVehicleForm from "./components/admin-add-vehicle/admin-add-vehicle";
+import DeleteVehicleForm from "./components/admin-delete-vehicle/admin-delete-vehicle";
 
 //import './nav.css';
 
@@ -106,6 +107,7 @@ function Login() {
       <Nav/>
       <LoginForm />
       <AddVehicleForm />
+      <DeleteVehicleForm />
     </div>);
 }
 

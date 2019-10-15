@@ -1,0 +1,17 @@
+.delete-vehicle-form-main-div {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin: auto;
+}
+
+.delete-vehicle-form-main-div input, .add-vehicle-form-main-div textarea{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.delete-vehicle-form-main-div form {
+    
+    width: 100%;
+}
