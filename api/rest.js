@@ -36,9 +36,9 @@ router.post('/vehicles', jsonParser, routes.vehicleList.postVehicle);
 router.patch('/vehicles/:id', jsonParser, middleware.checkID, routes.vehicleList.patchVehicle);
 router.delete('/vehicles/:id', middleware.checkID, routes.vehicleList.deleteVehicle);
 
-// test route to perform filtered query on vehicle table from database.
-router.get('/vehicles/:make/:model/:body/:transmission/:minYear/:maxYear/:minPrice/:maxPrice/:minKMS/:maxKMS', routes.vehicleList.getVehicleUseParams);
-
+// test routes to perform filtered query on vehicle table from database.
+router.get('/vehicles/:make/:model/:body/:transmission/:minYear/:maxYear/:minPrice/:maxPrice/:minKms/:maxKms', routes.vehicleList.getVehicleUseParams);
+router.get('/featured', routes.vehicleList.getFeaturedVehicles);
 
 // account requests
 router.get('/accounts', routes.accountList.getAllAccounts);

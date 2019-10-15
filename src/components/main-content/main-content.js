@@ -13,7 +13,7 @@ class MainContent extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4200/api/vehicles')
+        fetch('http://localhost:4200/api/featured')
             .then(res => res.json())
             .then(data => {
                 this.setState({
@@ -36,7 +36,7 @@ class MainContent extends React.Component {
                     <Vehicle id={4} dataFromParent={this.state.data}/>
                     <Vehicle id={5} dataFromParent={this.state.data}/>
                     <Vehicle id={6} dataFromParent={this.state.data}/>
-                    
+                    <Vehicle id={7} dataFromParent={this.state.data}/>                    
                 </div>
             </div>
         )

@@ -85,8 +85,28 @@ function deleteVehicle(req, res, next) {
         .catch(error => res.status(500).json(error));
 };
 
+// getVehicle       Returns single vehicle record based on ID.
+function getFeaturedVehicles(req, res) {
+    const {knex} = req.app.locals;
+    knex    
+        .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
+        .from('vehicle')
+        .where({featured: true})
+        .then(data => {
+            if(data.length > 0) {
+                return res.status(200).json(data);
+            }
+            else {
+                return res.status(404).json(`Vehicles could not be found`);
+            }
+    })
+    .catch(error => res.status(500).json(error))
+};
+
 // getVehicleUseParams      Returns a list of vehicles based on the provided params.
 function getVehicleUseParams(req, res) {
+    
+
     const {knex} = req.app.locals;
 
     const make = req.params.make;
@@ -97,8 +117,8 @@ function getVehicleUseParams(req, res) {
     const maxYear = req.params.maxYear;
     const minPrice = req.params.minPrice;
     const maxPrice = req.params.maxPrice;
-    const minKMS = req.params.minKMS;
-    const maxKMS = req.params.maxKMS;
+    const minKms = req.params.minKms;
+    const maxKms = req.params.maxKms;
 
     // Where clauses will check if the parameter has been entered (not including default) 
     // and retrieve the appropriate vehicles.
@@ -114,35 +134,35 @@ function getVehicleUseParams(req, res) {
                 this.where('model', `${model}`)
         })
         .where(function () {
-            if(body != 'any')
+            if(body != 'Any Body')
                 this.where('body', `${body}`)
         })
         .where(function () {
-            if(transmission != 'any')
+            if(transmission != 'Any Transmission')
                 this.where('transmission', `${transmission}`)
         })
         .where(function () {
-            if(minYear != 'any')
+            if(minYear != 'Any Year')
                 this.where('year', '>=', `${minYear}`)
         })
         .where(function () {
-            if(maxYear != 'any')
+            if(maxYear != 'Any Year')
                 this.where('year', '<=', `${maxYear}`)
         })
         .where(function () {
-            if(minPrice != 'any')
+            if(minPrice != 'Any Price')
                 this.where('price', '>=', `${minPrice}`)
         })
         .where(function () {
-            if(maxPrice != 'any')
+            if(maxPrice != 'Any Price')
                 this.where('price', '<=', `${maxPrice}`)
         })
         .where(function () {
-            if(minKMS != 'any')
+            if(minKms != 'Any Kms')
                 this.where('km', '>=', `${minKMS}`)
         })
         .where(function () {
-            if(maxKMS != 'any')
+            if(maxKms != 'Any Kms')
                 this.where('km', '<=', `${maxKMS}`)
         })     
         .then(data => {
@@ -162,5 +182,6 @@ module.exports = {
     postVehicle,
     patchVehicle,
     deleteVehicle,
+    getFeaturedVehicles,
     getVehicleUseParams
 };

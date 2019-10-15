@@ -54,7 +54,7 @@ class SearchForm extends React.Component {
 
         return (
             <div className='search-form-main-div'>
-                <form method='GET' action='/vehicles'>
+                <form method='GET' action='/vehicles/'>
                     <h2>Find a Car</h2>
                     <input type='text' placeholder='Keywords...' />
                     <select name='make'>

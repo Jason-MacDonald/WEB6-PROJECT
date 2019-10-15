@@ -8,12 +8,25 @@ class VehicleContent extends React.Component {
     constructor(props) {
         super(props);
         this.state = ({
-            data: 'test'
+            data: 'test',
+            make: props.make,
+            model: props.model,
+            body: props.body,
+            transmission: props.transmission,
+            minYear: props.minYear,
+            maxYear: props.maxYear,
+            minPrice: props.minPrice,
+            maxPrice: props.maxPrice,
+            minKms: props.minKms,
+            maxKms: props.maxKms
         })
+        console.log(props);
     }
 
     componentDidMount() {
-        fetch('http://localhost:4200/api/vehicles')
+        // fetch('http://localhost:4200/api/vehicles')
+        // '/vehicles/:make/:model/:body/:transmission/:minYear/:maxYear/:minPrice/:maxPrice/:minKMS/:maxKMS'
+        fetch(`http://localhost:4200/api/vehicles/${this.state.make}/${this.state.model}/${this.state.body}/${this.state.transmission}/${this.state.minYear}/${this.state.maxYear}/${this.state.minPrice}/${this.state.maxPrice}/${this.state.minKms}/${this.state.maxKms}`)
             .then(res => res.json())
             .then(data => {
                 this.setState({
@@ -36,7 +49,19 @@ class VehicleContent extends React.Component {
                     <Vehicle id={4} dataFromParent={this.state.data}/>
                     <Vehicle id={5} dataFromParent={this.state.data}/>
                     <Vehicle id={6} dataFromParent={this.state.data}/>
-                    
+                    <Vehicle id={7} dataFromParent={this.state.data}/>
+                    <Vehicle id={8} dataFromParent={this.state.data}/>
+                    <Vehicle id={9} dataFromParent={this.state.data}/>
+                    <Vehicle id={10} dataFromParent={this.state.data}/>
+                    <Vehicle id={11} dataFromParent={this.state.data}/>
+                    <Vehicle id={12} dataFromParent={this.state.data}/>
+                    <Vehicle id={13} dataFromParent={this.state.data}/>
+                    <Vehicle id={14} dataFromParent={this.state.data}/>
+                    <Vehicle id={15} dataFromParent={this.state.data}/>
+                    <Vehicle id={16} dataFromParent={this.state.data}/>
+                    <Vehicle id={17} dataFromParent={this.state.data}/>
+                    <Vehicle id={18} dataFromParent={this.state.data}/>
+                    <Vehicle id={19} dataFromParent={this.state.data}/>
                 </div>
                 <VehicleNav/>
             </div>

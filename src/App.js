@@ -28,11 +28,21 @@ function Index() {
   );
 }
 
-function Vehicles() {
+function Vehicles(props) {
   return (
     <div>
       <Nav />
-      <VehicleContent />
+      <VehicleContent   
+          make='Any Make' 
+          model='Any Model' 
+          body='Any Body' 
+          transmission='Any Transmission' 
+          minYear='Any Year' 
+          maxYear='Any Year' 
+          minPrice='Any Price' 
+          maxPrice='Any Price' 
+          minKms='Any Kms' 
+          maxKms='Any Kms'/>
       <Footer />
     </div>);
 }
