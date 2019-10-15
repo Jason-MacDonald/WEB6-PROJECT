@@ -27,3 +27,15 @@
     font-size: 1em;
     border-radius: 5px;
 }
+
+.no-vehicles-found {
+    padding-top: 200px;
+    text-align: center;
+    height: 300px;
+}
+
+.pop-in-search-form {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}

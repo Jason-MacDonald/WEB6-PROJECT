@@ -42,6 +42,17 @@ function Vehicles(props) {
   var queryString = JSON.parse(JSON.stringify(result));
   console.log(queryString);
 
+  if(queryString.make === undefined) {queryString.make = 'Any+Make'}
+  if(queryString.model === undefined) {queryString.model = 'Any+Model'}
+  if(queryString.body === undefined) {queryString.body = 'Any+Body'}
+  if(queryString.transmission === undefined) {queryString.transmission = 'Any+Transmission'}
+  if(queryString.minYear === undefined) {queryString.minYear = 'Any+Year'}
+  if(queryString.maxYear === undefined) {queryString.maxYear = 'Any+Year'}
+  if(queryString.minPrice === undefined) {queryString.minPrice = 'Any+Price'}
+  if(queryString.maxPrice === undefined) {queryString.maxPrice = 'Any+Price'}
+  if(queryString.minKms === undefined) {queryString.minKms = 'Any+Kms'}
+  if(queryString.maxKms === undefined) {queryString.maxKms = 'Any+Kms'}
+
   return (
     <div>
       <Nav />

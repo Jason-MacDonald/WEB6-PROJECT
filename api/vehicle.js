@@ -126,43 +126,43 @@ function getVehicleUseParams(req, res) {
         .select('year', 'transmission', 'description', 'price', 'km', 'location', 'seats', 'model', 'make', 'body', 'featured')
         .from('vehicle')
         .where(function () {
-            if(make != 'Any+Make')
+            if(make != 'Any+Make' && make != undefined)
                 this.where('make', `${make}`);
         })
         .where(function () {
-            if(model != 'Any+Model')
+            if(model != 'Any+Model' && model != undefined)
                 this.where('model', `${model}`)
         })
         .where(function () {
-            if(body != 'Any+Body')
+            if(body != 'Any+Body' && body != undefined)
                 this.where('body', `${body}`)
         })
         .where(function () {
-            if(transmission != 'Any+Transmission')
+            if(transmission != 'Any+Transmission' && transmission != undefined)
                 this.where('transmission', `${transmission}`)
         })
         .where(function () {
-            if(minYear != 'Any+Year')
+            if(minYear != 'Any+Year' && minYear != undefined)
                 this.where('year', '>=', `${minYear}`)
         })
         .where(function () {
-            if(maxYear != 'Any+Year')
+            if(maxYear != 'Any+Year' && maxYear != undefined)
                 this.where('year', '<=', `${maxYear}`)
         })
         .where(function () {
-            if(minPrice != 'Any+Price')
+            if(minPrice != 'Any+Price' && minPrice != undefined)
                 this.where('price', '>=', `${minPrice}`)
         })
         .where(function () {
-            if(maxPrice != 'Any+Price')
+            if(maxPrice != 'Any+Price' && maxPrice != undefined)
                 this.where('price', '<=', `${maxPrice}`)
         })
         .where(function () {
-            if(minKms != 'Any+Kms')
+            if(minKms != 'Any+Kms' && minKms != undefined)
                 this.where('km', '>=', `${minKms}`)
         })
         .where(function () {
-            if(maxKms != 'Any+Kms')
+            if(maxKms != 'Any+Kms' && maxKms != undefined)
                 this.where('km', '<=', `${maxKms}`)
         })     
         .then(data => {

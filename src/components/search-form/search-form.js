@@ -39,7 +39,7 @@ for (const [index, value] of dataSource.entries()) {
 class SearchForm extends React.Component {
     render() {
 
-        const bodyOptions = ['Any Body', 'Convertable', 'Coupe', 'Hatchback', 'Sedan', 'Station Wagon', 'RV/SUV', 'Ute', 'Van'];
+        const bodyOptions = ['Any Body', 'Convertable', 'Coupe', 'Hatchback', 'Sedan', 'Station Wagon', 'SUV', 'Ute', 'Van'];
 
         const yearOptions = [];
         const currentYear = new Date().getFullYear();
@@ -48,15 +48,20 @@ class SearchForm extends React.Component {
         }
 
         const priceOptions = [];
-        for (let i = 1; i < 76; i += 2) {
-            priceOptions.push(i + 'k');
+        for (let i = 1000; i < 76000; i += 2000) {
+            priceOptions.push(i);
+        }
+
+        const kmsOptions = [];
+        for (let i = 10000; i < 300000; i += 10000){
+            kmsOptions.push(i);
         }
 
         return (
             <div className='search-form-main-div'>
                 <form method='GET' action='/vehicles/'>
                     <h2>Find a Car</h2>
-                    <input type='text' placeholder='Keywords...' />
+                    {/* <input type='text' placeholder='Keywords...' /> */}
                     <select name='make'>
                         {makeItems};
                     </select>
@@ -93,7 +98,7 @@ class SearchForm extends React.Component {
 
                     <select className="inline-block" name='minYear'>
                         <option>Any Year</option>
-                        {priceOptions.map((value, index) => {
+                        {yearOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
                     </select>
@@ -109,14 +114,16 @@ class SearchForm extends React.Component {
 
                     <select className="inline-block" name='minKms'>
                         <option>Any Kms</option>
-                        {yearOptions.map((value, index) => {
+                        {kmsOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
                     </select>
 
+                    <p>to</p>
+
                     <select className="inline-block" name='maxKms'>
                         <option>Any Kms</option>
-                        {yearOptions.map((value, index) => {
+                        {kmsOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
                     </select>
