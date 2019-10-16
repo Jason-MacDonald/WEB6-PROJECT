@@ -33,9 +33,9 @@ for (const [index, value] of dataSource[selectedMake][1].entries()) {
     modelItems.push(<option key={index}>{value}</option>)
 }
 // eslint-disable-next-line
-for (const [index, value] of dataSource.entries()) {
-    makeItems.push(<option key={index}>{value[0]}</option>)
-}
+// for (const [index, value] of dataSource.entries()) {
+//     makeItems.push(<option key={index}>{value[0]}</option>)
+// }
 
 class SearchForm extends React.Component {
     render() {

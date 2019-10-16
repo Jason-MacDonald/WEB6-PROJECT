@@ -24,7 +24,7 @@ class DeleteVehicleForm extends React.Component {
             <div className='delete-vehicle-form-main-div'>
                 <form onSubmit={this.handleSubmit}>
                     <h2>Delete a Car</h2>
-                    <input ref={(ref) => {this.id = ref}} type="text" id='id' placeholder="id..." name='id'/>
+                    <input ref={(ref) => {this.id = ref}} type="text" id='id' placeholder="id..." name='id' required/>
                     <input className="submit" type="submit" id='submit' value="Delete Vehicle" />
                 </form>
             </div>
