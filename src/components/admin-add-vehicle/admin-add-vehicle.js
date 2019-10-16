@@ -4,7 +4,6 @@ import './admin-add-vehicle.css'
 
 // Setup for dropdowns
 const dataSource = [
-    ['Any Make', []],
     ['Audi', ['A4', 'TT']],
     ['BMW', ['330i']],
     ['Chevrolet', ['Sonic']],
@@ -21,7 +20,7 @@ const dataSource = [
 const makeItems = [];
 const modelItems = [];
 
-let selectedMake = 4; //TODO: Update index depending on make chosen in drop down.
+let selectedMake = 3; //TODO: Update index depending on make chosen in drop down.
 
 // Pushes appropriate JSX elementS into variable to be rendered in the appropriate selection element on the form.
 // eslint-disable-next-line
@@ -45,6 +44,7 @@ class AddVehicleForm extends React.Component {
     // TODO: Research further how this works.
     handleSubmit(event) {
         event.preventDefault();
+        // Need to remove component after successful POST.
         //console.log(this.featured.value);
 
         // This is a fetch directly on the form component.
@@ -66,9 +66,14 @@ class AddVehicleForm extends React.Component {
                 "body": this.body.value,
                 "featured": this.featured.checked
             })
-        });
-        // TODO: There is not enough error handling etc here!
-        console.log("New Vehicle Added!")
+            
+        })
+        .then(() => {
+            console.log("New Vehicle Added!")
+        })
+        .catch(err => {
+            console.log(err)
+        })       
     }
 
     // Returns a form. When submitted, this state (value) = ref
@@ -76,7 +81,7 @@ class AddVehicleForm extends React.Component {
     render() {
         //Sets up all the input data sources.
         // TODO: Move seperately to be used by other inputs.
-        const bodyOptions = ['Any Body', 'Convertable', 'Coupe', 'Hatchback', 'Sedan', 'Station Wagon', 'SUV', 'Ute', 'Van'];
+        const bodyOptions = ['Convertable', 'Coupe', 'Hatchback', 'Sedan', 'Station Wagon', 'SUV', 'Ute', 'Van'];
 
         //Sets up the appropriate selection option values.
         const yearOptions = [];
@@ -100,27 +105,79 @@ class AddVehicleForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <h2>Add a Car</h2>
                     {/* <input ref={(ref) => {this.make = ref}} type="text" id='make' placeholder="Make..." name='make' required/> */}
-                    <select ref={(ref) => {this.make = ref}} id='make' name='make'>
+                    <select ref={(ref) => {this.make = ref}} id='make' name='make' required>
+                        <option value="" disabled selected hidden>Make...</option>
                         {makeItems}
                     </select>
                     {/* <input ref={(ref) => {this.model = ref}}  type="text" placeholder="Model..." name='model' required/> */}
-                    <select ref={(ref) => {this.model = ref}} id='model' name='model'>
+                    <select ref={(ref) => {this.model = ref}} id='model' name='model' required>
+                    <option value="" disabled selected hidden>Model...</option>
                         {modelItems}
                     </select>                   
                     {/* <input ref={(ref) => {this.body = ref}}  type="text" placeholder="Body..." name='body'/> */}
-                    <select ref={(ref) => {this.body = ref}} id='body' name='body'>
+                    <select ref={(ref) => {this.body = ref}} id='body' name='body' required>
+                        <option value="" disabled selected hidden>body...</option>
                         {bodyOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
                     </select> 
-                    <input ref={(ref) => {this.transmission = ref}}  type="text" placeholder="Transmission..." name='transmission' required/>
-                    <input ref={(ref) => {this.price = ref}}  type="number" placeholder="Price..." name='price' required/>
-                    <input ref={(ref) => {this.year = ref}}  type="number" placeholder="Year..." name='year' required/>
-                    <input ref={(ref) => {this.kms = ref}}  type="number" placeholder="Kms..." name='kms' required/>
-                    <input ref={(ref) => {this.seats = ref}}  type="number" placeholder="Seats..." name='seats' required/>
-                    <input ref={(ref) => {this.location = ref}}  type="text" placeholder="Location..." name='location' required/>
+                    
+
+                    {/* <input ref={(ref) => {this.transmission = ref}}  type="text" placeholder="Transmission..." name='transmission' required/> */}
+                    <select ref={(ref) => {this.transmission = ref}} id='transmission' name='transmission' required>
+                        <option value="" disabled selected hidden>Transmission...</option>
+                        <option>Manual</option>
+                        <option>Automatic</option>
+                        <option>Tiptronic</option>
+                    </select>
+                    
+                    {/* <input ref={(ref) => {this.price = ref}}  type="number" placeholder="Price..." name='price' required/> */}
+                    <select ref={(ref) => {this.price = ref}} name='price' id='price' required>
+                        <option value="" disabled selected hidden>Price...</option>
+                        {priceOptions.map((value, index) => {
+                            return <option key={index}>{value}</option>
+                        })}
+                    </select> 
+                    
+                    {/* <input ref={(ref) => {this.year = ref}}  type="number" placeholder="Year..." name='year' required/> */}
+                    <select ref={(ref) => {this.year = ref}} name='year' id='year' required>
+                        <option value="" disabled selected hidden>Year...</option>
+                        {yearOptions.map((value, index) => {
+                            return <option key={index}>{value}</option>
+                        })}
+                    </select> 
+                    
+                    {/* <input ref={(ref) => {this.kms = ref}}  type="number" placeholder="Kms..." name='kms' required/> */}
+                     <select ref={(ref) => {this.kms = ref}} name=''>
+                     <option value="" disabled selected hidden>Kms...</option>
+                        {kmsOptions.map((value, index) => {
+                            return <option key={index}>{value}</option>
+                        })}
+                     </select>   
+
+                    {/* <input ref={(ref) => {this.seats = ref}}  type="number" placeholder="Seats..." name='seats' required/> */}
+                    <select ref={(ref) => {this.seats = ref}} id='seats' name='seats'>
+                        <option value="" disabled selected hidden>Seats...</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                    </select>
+                    
+                    {/* <input ref={(ref) => {this.location = ref}}  type="text" placeholder="Location..." name='location' required/> */}
+                    <select ref={(ref) => {this.location = ref}} name='location'>
+                        <option value="" disabled selected hidden>Location...</option>
+                        <option>Nelson</option>
+                        <option>Richmond</option>
+                        <option>Tahunanui</option>
+                    </select>
+
                     <textarea ref={(ref) => {this.description = ref}}  placeholder="Description" name='description' required/>
-                    <input ref={(ref) => {this.featured = ref}}  type="checkbox" placeholder="Featured..." name='featured' required/>
+                    <input ref={(ref) => {this.featured = ref}}  type="checkbox" placeholder="Featured..." name='featured'/>
 
                     <input className="submit" type="submit" id='submit' value="Add Vehicle" />
                 </form>
