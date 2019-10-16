@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import './nav.css'
 
+// Standard nav. Nothing exciting.
 const Nav = () => {
     return (
         <div >

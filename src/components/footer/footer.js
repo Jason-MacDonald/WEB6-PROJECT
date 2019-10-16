@@ -2,6 +2,7 @@ import React from 'react';
 
 import './footer.css'
 
+// UGLY: Placeholder for a better footer.
 const Footer = () => {
     return (
         <div className="footer-main-div">
@@ -42,7 +43,7 @@ const Footer = () => {
     )
 }
 
-
+// TODO: Have this in two scripts. Should be removed to own or at least made available to both.
 class Contact extends React.Component {
     render() {
         return (

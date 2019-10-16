@@ -2,6 +2,7 @@ import React from 'react';
 
 import './contact-content.css'
 
+// Very basic React component which holds multiple Contact elements also created on the same script.
 class ContactContent extends React.Component {
     // constructor(props) {
     //     super(props);
@@ -9,6 +10,7 @@ class ContactContent extends React.Component {
 
     //     }
     // }
+    // TODO: Form functionality.
     render() {
         return (
             <div className="contact-content-main-div">
@@ -31,6 +33,8 @@ class ContactContent extends React.Component {
     }
 }
 
+// Simple Contact information element.
+// TODO: Add and pull from database.
 class Contact extends React.Component {
     render() {
         return (

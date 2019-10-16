@@ -6,6 +6,7 @@ import SearchForm from '../search-form/search-form';
 
 class VehicleContent extends React.Component {
 
+    // Receives props on Element call from search form (or undefined changed to 'Any+' value)
     constructor(props) {
         super(props);
         this.state = ({
@@ -23,6 +24,7 @@ class VehicleContent extends React.Component {
         })
     }
 
+    // Fetches filtered vehicle list of results.
     componentDidMount() {
         // fetch('http://localhost:4200/api/vehicles')
         // '/vehicles/:make/:model/:body/:transmission/:minYear/:maxYear/:minPrice/:maxPrice/:minKMS/:maxKMS'
@@ -40,6 +42,7 @@ class VehicleContent extends React.Component {
     
     render () {
         console.log(this.state.data);
+        // Makes sure vehicles exist otherwise returns error message to screen.
         if(this.state.data !== 'Vehicles could not be found') {
             return (
                 <div className='vehicle-content-main-div'>
@@ -80,7 +83,7 @@ class VehicleContent extends React.Component {
     }     
 }
 
-
+// TODO: Implement.
 class VehicleNav extends React.Component {
     render () {
         return (

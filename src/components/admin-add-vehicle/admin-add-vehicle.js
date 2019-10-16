@@ -5,18 +5,22 @@ import './admin-add-vehicle.css'
 class AddVehicleForm extends React.Component {
     constructor() {
         super();
+        // TODO: Research further how this works.
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // TODO: Research further how this works.
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.featured.value);
+        //console.log(this.featured.value);
 
+        // This is a fetch directly on the form component.
+        // TODO: Find out if there is a way to do this via the back end vehicles.js  
         fetch('http://localhost:4200/api/vehicles', {
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
-                //"id": 99,
+                //"id": 99, // Not needed as Auto Increment is enabled.
                 "year": this.year.value,
                 "transmission": this.transmission.value,
                 "description": this.description.value,
@@ -30,9 +34,12 @@ class AddVehicleForm extends React.Component {
                 "featured": this.featured.checked
             })
         });
+        // TODO: There is not enough error handling etc here!
         console.log("New Vehicle Added!")
     }
 
+    // Returns a form. When submitted, this state (value) = ref
+    // TODO: Research further how this works.
     render() {
         return (
             <div className='add-vehicle-form-main-div'>

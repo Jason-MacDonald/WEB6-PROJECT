@@ -12,7 +12,9 @@ class Vehicle extends React.Component {
         })
     }
 
+    // Uses dataFromParent to populate data within component. 
     render() {
+        // Makes sure a record exists.
         if(this.props.dataFromParent[this.props.id] != null)
         {
             return (

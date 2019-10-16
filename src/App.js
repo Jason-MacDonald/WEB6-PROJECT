@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
+
+// Import the range of components required for all web pages.
 import Main from './components/main/main';
 import MainContent from './components/main-content/main-content';
 import VehicleContent from './components/vehicle-content/vehicle-content';
@@ -16,6 +18,8 @@ import DeleteVehicleForm from "./components/admin-delete-vehicle/admin-delete-ve
 
 //import './nav.css';
 
+// Serves up the Index page by returning a list of appropriate components.
+// Searchfrom has been integrated into the main component directly.
 function Index() {
   return (
     <div>
@@ -30,19 +34,27 @@ function Index() {
 }
 
 function Vehicles(props) {
+
+  // The following section takes the query string from the form submission and converts it into JSON.
+  // TODO: Move to middleware. Better way to achieve?
   // https://www.developerdrive.com/turning-the-querystring-into-a-json-object-using-javascript/
+
+  // Takes the search query, removes the leading ? and splits each pair into an array.
   var pairs = props.location.search.slice(1).split('&');
-
   var result = {};
-
+  // Splits the pairs and assigns value to the appropriate index.
   pairs.forEach(function(pair) {
     pair = pair.split('=');
+    // TODO: research how this line works.
     result[pair[0]] = decodeURIComponent(pair[1] || '');
   });
-
+  // Turns the result into JSON for use of pair values.
   var queryString = JSON.parse(JSON.stringify(result));
-  console.log(queryString);
+  //console.log(queryString);
 
+  // UGLY: If the query strings chosen parameter is undefined, change it to the appropriate 'Any+' value.
+  // The 'Any+' value is used conditionally to NOT use the parameter during a filtered search.
+  // TODO: a separate API call for when vehicle LINK is clicked rather than using the filtered request version.
   if(queryString.make === undefined) {queryString.make = 'Any+Make'}
   if(queryString.model === undefined) {queryString.model = 'Any+Model'}
   if(queryString.body === undefined) {queryString.body = 'Any+Body'}
@@ -73,7 +85,7 @@ function Vehicles(props) {
 }
 
 
-
+// Serves up the Finance page by returning a list of appropriate components. Mostly static content.
 function Finance() {
   return (
     <div>
@@ -83,6 +95,7 @@ function Finance() {
     </div>);
 }
 
+// Serves up the About page by returning a list of appropriate components. Mostly static content.
 function About() {
   return (
     <div>
@@ -92,6 +105,7 @@ function About() {
     </div>);
 }
 
+// Serves up the Contact page by returning a list of appropriate components.
 function Contact() {
   return (
     <div>
@@ -101,6 +115,8 @@ function Contact() {
     </div>);
 }
 
+// Serves up the Login page by returning a list of appropriate components.
+// Currently a work in progress. AddVehicleForm and DeleteVehicleForm should be rendered appropriately after login in. ie via button / menu.
 function Login() {
   return (
     <div>
@@ -111,6 +127,7 @@ function Login() {
     </div>);
 }
 
+// Returns the appropriate page based on the path using React Router.
 function App() {
   return (
     <Router>

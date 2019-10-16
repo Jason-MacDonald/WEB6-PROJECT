@@ -23,6 +23,7 @@ const modelItems = [];
 
 let selectedMake = 4; //TODO: Update index depending on make chosen in drop down.
 
+// Pushes appropriate JSX elementS into variable to be rendered in the appropriate selection element on the form.
 // eslint-disable-next-line
 for (const [index, value] of dataSource.entries()) {
     makeItems.push(<option key={index}>{value[0]}</option>)
@@ -38,9 +39,11 @@ for (const [index, value] of dataSource.entries()) {
 
 class SearchForm extends React.Component {
     render() {
-
+        //Sets up all the input data sources.
+        // TODO: Move seperately to be used by other inputs.
         const bodyOptions = ['Any Body', 'Convertable', 'Coupe', 'Hatchback', 'Sedan', 'Station Wagon', 'SUV', 'Ute', 'Van'];
 
+        //Sets up the appropriate selection option values.
         const yearOptions = [];
         const currentYear = new Date().getFullYear();
         for (let i = (currentYear); i > (currentYear - 50); i--) {
@@ -57,6 +60,8 @@ class SearchForm extends React.Component {
             kmsOptions.push(i);
         }
 
+        // Nothing incredibly exciting here.
+        // Changes to vehicle page and provides data for componentDidMount fetch to get filtered search results.
         return (
             <div className='search-form-main-div'>
                 <form method='GET' action='/vehicles/'>

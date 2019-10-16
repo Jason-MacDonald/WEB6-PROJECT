@@ -2,6 +2,7 @@ import React from 'react';
 
 import './login-form.css';
 
+// TODO: Add functionality.
 class LoginForm extends React.Component {
     render() {
         return (

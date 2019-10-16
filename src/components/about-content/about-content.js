@@ -2,7 +2,8 @@ import React from 'react';
 
 import './about-content.css';
 
-// Example of changing classes to functions.
+// Nothing fancy.
+// OLD: Example of changing classes to functions.
 //class AboutContent extends React.Component {
 const AboutContent = () => {
     //render () {

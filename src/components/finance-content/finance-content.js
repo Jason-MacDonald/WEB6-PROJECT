@@ -2,6 +2,7 @@ import React from 'react';
 
 import './finance-content.css';
 
+// Simple Finance content component. Static information only.
 const FinanceContent = () => {
     return (
         <div className="finance-content-main-div">
