@@ -12,9 +12,17 @@ class DeleteVehicleForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        fetch('http://localhost:4200/api/vehicles/' + this.id.value, {method: 'delete',});
+        // Error handling not working as expected. Still running next after fail?
+        fetch('http://localhost:4200/api/vehicles/' + this.id.value, {
+            method: 'delete'
+        })
+        .then(() => {
+            console.log("Vehicle Deleted!")
+        })
+        .catch(err => {
+            console.log(err)
+        })       
         // TODO: Another case of; can I not use the back end Server calls already created.
-        console.log("Vehicle Deleted!")
     }
 
     // Form to delete a vehicle using the input id.
@@ -24,7 +32,7 @@ class DeleteVehicleForm extends React.Component {
             <div className='delete-vehicle-form-main-div'>
                 <form onSubmit={this.handleSubmit}>
                     <h2>Delete a Car</h2>
-                    <input ref={(ref) => {this.id = ref}} type="text" id='id' placeholder="id..." name='id' required/>
+                    <input ref={(ref) => {this.id = ref}} type="number" id='id' placeholder="id..." name='id' required/>
                     <input className="submit" type="submit" id='submit' value="Delete Vehicle" />
                 </form>
             </div>

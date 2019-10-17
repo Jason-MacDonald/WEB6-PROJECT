@@ -100,6 +100,8 @@ class AddVehicleForm extends React.Component {
             kmsOptions.push(i);
         }
 
+
+
         return (
             <div className='add-vehicle-form-main-div'>
                 <form onSubmit={this.handleSubmit}>
@@ -179,7 +181,7 @@ class AddVehicleForm extends React.Component {
                     <textarea ref={(ref) => {this.description = ref}}  placeholder="Description" name='description' required/>
                     <input ref={(ref) => {this.featured = ref}}  type="checkbox" placeholder="Featured..." name='featured'/>
 
-                    <input className="submit" type="submit" id='submit' value="Add Vehicle" />
+                    <input className="submit" type="submit" value="Add Vehicle" />
                 </form>
             </div>
         )
