@@ -22,8 +22,8 @@ class Vehicle extends React.Component {
                     <img alt='Vehicle' src={require('../../img/blue-flower.jpeg')} />
                     <h4>{this.props.dataFromParent[this.props.id].year} {this.props.dataFromParent[this.props.id].make} {this.props.dataFromParent[this.props.id].model}</h4>
                     <p>{this.props.dataFromParent[this.props.id].transmission}</p>
-                    <h4 id='kms'>{this.props.dataFromParent[this.props.id].kms}</h4>
-                    <h4 id='price'>{this.props.dataFromParent[this.props.id].price}</h4>
+                    <h4 id='kms'>{this.props.dataFromParent[this.props.id].kms} kms</h4>
+                    <h4 id='price'>${this.props.dataFromParent[this.props.id].price}</h4>
                     <p id='location'>{this.props.dataFromParent[this.props.id].location}</p>
                     
                 </div>

@@ -4,33 +4,18 @@
     padding: 20px 10%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-flow: row;
 }
 
-/* .footer-contact {
-    width: 30%;
-} */
-
 .footer-opening-hours {
     text-align: center;
-    /* width: 30%; */
 }
 
 .footer-locations {
-    text-align: right;
-    /* width: 30%; */
-    
+    text-align: right;  
 }
 
-.contact {
-    padding: 10px;
-}
-
-.hours {
-    padding: 10px;
-}
-
-.location {
+.contact, .hours, .location{
     padding: 10px;
 }

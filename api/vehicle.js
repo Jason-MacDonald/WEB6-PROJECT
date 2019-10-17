@@ -160,11 +160,11 @@ function getVehicleUseParams(req, res) {
         })
         .where(function () {
             if(minKms != 'Any+Kms' && minKms != undefined)
-                this.where('km', '>=', `${minKms}`)
+                this.where('kms', '>=', `${minKms}`)
         })
         .where(function () {
             if(maxKms != 'Any+Kms' && maxKms != undefined)
-                this.where('km', '<=', `${maxKms}`)
+                this.where('kms', '<=', `${maxKms}`)
         })     
         .then(data => {
             if(data.length > 0) {
