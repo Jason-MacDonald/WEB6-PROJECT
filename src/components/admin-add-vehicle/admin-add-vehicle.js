@@ -44,8 +44,8 @@ class AddVehicleForm extends React.Component {
     // TODO: Research further how this works.
     handleSubmit(event) {
         event.preventDefault();
-        // Need to remove component after successful POST.
-        //console.log(this.featured.value);
+        // TODO: Need to remove component after successful POST.
+        // console.log(this.featured.value);
 
         // This is a fetch directly on the form component.
         // TODO: Find out if there is a way to do this via the back end vehicles.js  

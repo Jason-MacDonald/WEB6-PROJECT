@@ -1,4 +1,4 @@
-//Currently working on.
+//Currently working on. Probably not going to be used for this project??
 
 function getAdmins(req, res) {
     const {knex} = req.app.locals;

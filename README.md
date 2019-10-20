@@ -68,17 +68,17 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-This repository contains an ongoing webdevelopment project for the WEB601 Dyamic Web Technology course fron Nelson Marlborough Institute of Technology. The website takes the current web presence for a local company and attempts to update and modernize it.
+This repository contains an ongoing web development project for the WEB601 Dynamic Web Technology course from Nelson Marlborough Institute of Technology. The website takes the current web presence for a local company and attempts to update and modernize it.
 
 This is an ongoing project consisting of three milestones:
 * Milestone One: Focus on the Analysis and Design phase, including first cut of site design and structure.
-* Milestone Two: ???
+* Milestone Two: React and express: Communication between front-end and back-end.
 * Milestone Three: ???
 
 ### Built With
 
 * [React](https://reactjs.org/)
-* ??? [Express](https://expressjs.com/)
+* [Express](https://expressjs.com/)
 
 
 <!-- GETTING STARTED -->
@@ -115,6 +115,15 @@ Start the project in a local server.
 ```sh
 npm start
 ```
+This will start an API server on port 4200.
+
+2. Open a terminal on the top level client directory
+```sh
+npm test
+```
+This will start the web server on port 3000.
+
+3. [Need to add sql for MySQL database]
 
 <!-- ROADMAP -->
 ## Roadmap
