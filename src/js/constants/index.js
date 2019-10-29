@@ -1,0 +1,1 @@
+const ADD_VEHICLE = 'ADD_VEHICLE';
