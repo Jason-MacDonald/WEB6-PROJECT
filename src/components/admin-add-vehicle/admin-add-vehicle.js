@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
+import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
+
+
 import './admin-add-vehicle.css'
 
 // Setup for dropdowns
@@ -179,9 +183,9 @@ class AddVehicleForm extends React.Component {
                     </select>
 
                     <textarea ref={(ref) => {this.description = ref}}  placeholder="Description" name='description' required/>
-                    <input ref={(ref) => {this.featured = ref}}  type="checkbox" placeholder="Featured..." name='featured'/>
+                    <CheckBoxComponent ref={(ref) => {this.featured = ref}}  type="checkbox" placeholder="Featured..." name='featured'/>
 
-                    <input className="submit" type="submit" value="Add Vehicle" />
+                    <ButtonComponent cssClass='e-info' className="submit" type="submit">Add Vehicle</ButtonComponent>
                 </form>
             </div>
         )

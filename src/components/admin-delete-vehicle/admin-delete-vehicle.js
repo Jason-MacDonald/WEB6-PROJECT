@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
+
 import './admin-delete-vehicle.css'
 
 // This is a basic delete request handled directly in the delete vehicle form.
@@ -33,7 +35,7 @@ class DeleteVehicleForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <h2>Delete a Car</h2>
                     <input ref={(ref) => {this.id = ref}} type="number" id='id' placeholder="id..." name='id' required/>
-                    <input className="submit" type="submit" id='submit' value="Delete Vehicle" />
+                    <ButtonComponent cssClass='e-info' className="submit" type="submit" id='submit'>Delete Vehicle</ButtonComponent>
                 </form>
             </div>
         )
