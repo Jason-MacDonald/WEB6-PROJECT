@@ -1,9 +1,19 @@
+import { ADD_VEHICLE } from '../constants/index'
+
 const initialState = {
     vehicles: []
 };
 
 function rootReducer(state = initialState, action) {
-    return state;
+    switch (action.type) {
+        case ADD_VEHICLE:
+            return Object.assign({}, state, {
+                vehicles: state.vehicles.concat(action.payload)
+            });
+        default:
+            return state;
+    }
+
 };
 
 export default rootReducer;
