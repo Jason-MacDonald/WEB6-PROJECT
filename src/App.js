@@ -16,6 +16,10 @@ import ContactContent from './components/contact-content/contact-content'
 import AddVehicleForm from "./components/admin-add-vehicle/admin-add-vehicle";
 import DeleteVehicleForm from "./components/admin-delete-vehicle/admin-delete-vehicle";
 
+import VehicleList from './components/test-component/test-component'
+import TestForm from './components/test-form/test-form'
+import ReduxVehicles from "./components/redux-vehicles/redux-vehicles";
+
 //import './nav.css';
 
 // Serves up the Index page by returning a list of appropriate components.
@@ -23,11 +27,13 @@ import DeleteVehicleForm from "./components/admin-delete-vehicle/admin-delete-ve
 function Index() {
   return (
     <div>
+    
       {/* <LoginForm /> */}
       <Nav />
       <Main />
       {/* <SearchForm /> */}
-      <MainContent />
+      {/* <MainContent /> */}
+      <ReduxVehicles />
       <Footer />
     </div>
   );
@@ -120,6 +126,11 @@ function Contact() {
 function Login() {
   return (
     <div>
+      
+      <br/>
+      <TestForm />
+      <VehicleList />
+
       <Nav/>
       <LoginForm />
       <AddVehicleForm />

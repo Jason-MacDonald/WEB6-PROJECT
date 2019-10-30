@@ -1,2 +1,3 @@
 // eslint-disable-next-line
-const ADD_VEHICLE = 'ADD_VEHICLE';
+export const ADD_VEHICLE = 'ADD_VEHICLE';
+export const DATA_LOADED = 'DATA_LOADED';

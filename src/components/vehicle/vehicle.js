@@ -3,7 +3,6 @@ import React from 'react';
 
 import './vehicle.css';
 
-
 class Vehicle extends React.Component {
     constructor(props) {
         super(props);

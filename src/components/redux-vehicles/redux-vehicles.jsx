@@ -1,0 +1,43 @@
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getData } from '../../js/actions/index';
+
+export class ReduxVehicles extends Component {
+    constructor() {
+        super();
+    }
+
+    componentDidMount() {
+        this.props.getData();
+    }
+
+    render() {
+        return (
+            <><div className='vehicle-content-main-div'>
+                <div className="vehicles-wrapper">
+                    {this.props.vehicles.map(vehicle => (
+                        <div className='vehicle-main-div'>
+                            <img alt='Vehicle' src={require('../../img/blue-flower.jpeg')} />
+                            <h4>{vehicle.year} {vehicle.make} {vehicle.model}</h4>
+                            <p>{vehicle.transmission}</p>
+                            <h4 id='kms'>{vehicle.kms} kms</h4>
+                            <h4 id='price'>${vehicle.price}</h4>
+                            <p id='location'>{vehicle.location}</p>
+                        </div>
+                    ))}
+                </div></div>
+            </>
+        );
+    }
+}
+
+function mapStateToProps(state) {
+    return {
+        vehicles: state.remoteVehicles.slice(0, 10)
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    { getData }
+)(ReduxVehicles);
