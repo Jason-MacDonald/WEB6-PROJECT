@@ -20,6 +20,8 @@ import VehicleList from './components/test-component/test-component'
 import TestForm from './components/test-form/test-form'
 import ReduxVehicles from "./components/redux-vehicles/redux-vehicles";
 
+import Navbar from './components/styled-nav/navbar'
+
 //import './nav.css';
 
 // Serves up the Index page by returning a list of appropriate components.
@@ -27,9 +29,9 @@ import ReduxVehicles from "./components/redux-vehicles/redux-vehicles";
 function Index() {
   return (
     <div>
-    
+    <Navbar />
       {/* <LoginForm /> */}
-      <Nav />
+      {/* <Nav /> */}
       <Main />
       {/* <SearchForm /> */}
       {/* <MainContent /> */}
@@ -74,7 +76,8 @@ function Vehicles(props) {
 
   return (
     <div>
-      <Nav />
+    <Navbar />
+      {/* <Nav /> */}
       <VehicleContent   
           make={queryString.make} 
           model={queryString.model} 
@@ -95,7 +98,8 @@ function Vehicles(props) {
 function Finance() {
   return (
     <div>
-      <Nav />
+    <Navbar />
+      {/* <Nav /> */}
       <FinanceContent />
       <Footer />
     </div>);
@@ -105,7 +109,8 @@ function Finance() {
 function About() {
   return (
     <div>
-      <Nav />
+    <Navbar />
+      {/* <Nav /> */}
       <AboutContent />
       <Footer />
     </div>);
@@ -115,7 +120,8 @@ function About() {
 function Contact() {
   return (
     <div>
-      <Nav />
+    <Navbar />
+      {/* <Nav /> */}
       <ContactContent />
       <Footer />
     </div>);
@@ -131,7 +137,8 @@ function Login() {
       <TestForm />
       <VehicleList />
 
-      <Nav/>
+      {/* <Nav/> */}
+      <Navbar />
       <LoginForm />
       <AddVehicleForm />
       <DeleteVehicleForm />

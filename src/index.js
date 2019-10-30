@@ -13,7 +13,7 @@ import {addVehicle} from './js/actions/index'
 window.store = store;
 window.addVehicle = addVehicle;
 
-//ReactDOM.render(<App />, document.getElementById('root'));
+//EDIT: ReactDOM.render(<App />, document.getElementById('root'));
 
 // Provider wraps up the React application and make it aware of the entire Redux store.
 render(
