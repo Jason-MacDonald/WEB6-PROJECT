@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 
+// This is the burger menu icon.
 const Burgermenu = (props) => {
   return (
     <Wrapper onClick={props.handleNavbar}>
@@ -22,13 +23,15 @@ const Wrapper = styled.div`
   display: block;
 
   & span {
-    background: #fdcb6e;
+    background-color: rgb(9, 67, 98);
+    ${'' /* background: #fdcb6e; */}
     display: block;
     position: relative;
     width: 3.5rem;
     height: .4rem;
     margin-bottom: .7rem;
     transition: all ease-in-out 0.2s;
+    
   }
 
   .open span:nth-child(2) {
@@ -37,7 +40,7 @@ const Wrapper = styled.div`
 
   .open span:nth-child(3) {
     transform: rotate(45deg);
-    top: -11px;
+    top: -24px;
   }
 
   .open span:nth-child(1) {

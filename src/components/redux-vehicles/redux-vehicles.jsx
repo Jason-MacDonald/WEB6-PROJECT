@@ -32,8 +32,15 @@ export class ReduxVehicles extends Component {
 }
 
 function mapStateToProps(state) {
+    //var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+    var vehicles = state.remoteVehicles;
+
+    //const result = words.filter(word => word.length > 6);
+    const featuredVehicles = vehicles.filter(vehicle => vehicle.featured == true);
+
     return {
-        vehicles: state.remoteVehicles.slice(0, 10)
+        //vehicles: state.remoteVehicles.slice(0, 10)
+        vehicles: featuredVehicles.slice(0, 10)
     }
 }
 

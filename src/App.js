@@ -20,7 +20,7 @@ import VehicleList from './components/test-component/test-component'
 import TestForm from './components/test-form/test-form'
 import ReduxVehicles from "./components/redux-vehicles/redux-vehicles";
 
-import Navbar from './components/styled-nav/navbar'
+import Navbar from './components/styled-nav/styled-nav'
 
 //import './nav.css';
 

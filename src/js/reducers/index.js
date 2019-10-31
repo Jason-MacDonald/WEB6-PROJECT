@@ -2,7 +2,7 @@ import { ADD_VEHICLE } from '../constants/index'
 import { DATA_LOADED } from '../constants/index'
 
 const initialState = {
-    vehicles: [],
+    vehicles: [], // TODO: remove - testing array with vehicles added
     remoteVehicles: []
 };
 

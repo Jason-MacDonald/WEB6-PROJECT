@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 import { useSpring, animated } from 'react-spring';
 
@@ -16,10 +17,13 @@ const CollapseMenu = (props) => {
       }}
       >
         <NavLinks>
-          <li><a href="/" onClick={props.handleNavbar}>link n1</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n2</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n3</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n4</a></li>
+
+          <li><Link to="/">Home</Link></li>
+            <li><Link to="/vehicles/">Vehicles</Link></li>
+            <li><Link to="/finance/">Finance</Link></li>
+            <li><Link to="/about/">About</Link></li>
+            <li><Link to="/contact/">Contact</Link></li>
+            <li><Link to="/login/">Login</Link></li>
         </NavLinks>
       </CollapseWrapper>
     );
@@ -30,7 +34,8 @@ const CollapseMenu = (props) => {
 export default CollapseMenu;
 
 const CollapseWrapper = styled(animated.div)`
-  background: #2d3436;
+background-color: rgb(9, 67, 98);
+  ${'' /* background: #2d3436; */}
   position: fixed;
   top: 4.5rem;
   left: 0;
@@ -39,15 +44,15 @@ const CollapseWrapper = styled(animated.div)`
 
 const NavLinks = styled.ul`
   list-style-type: none;
-  padding: 2rem 1rem 2rem 2rem;
+  padding: 5rem 1rem 2rem 2rem;
 
   & li {
     transition: all 300ms linear 0s;
   }
 
   & a {
-    font-size: 1.4rem;
-    line-height: 2;
+    font-size: 1.5rem;
+    line-height: 3;
     color: #dfe6e9;
     text-transform: uppercase;
     text-decoration: none;

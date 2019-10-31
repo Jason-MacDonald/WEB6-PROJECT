@@ -6,8 +6,9 @@ export function addVehicle(payload) {
 }
 
 export function getData() {
+    // Change to get from store.
     return function (dispatch) {
-        return fetch('http://localhost:4200/api/featured')
+        return fetch('http://localhost:4200/api/vehicles')
             .then(res => res.json())
             .then(json => {
                 dispatch ({ type: DATA_LOADED, payload: json });
