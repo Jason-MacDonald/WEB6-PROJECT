@@ -1,8 +1,4 @@
-import { ADD_VEHICLE, DATA_LOADED, } from '../constants/index'
-
-export function addVehicle(payload) {
-    return { type: ADD_VEHICLE, payload };
-}
+import {DATA_LOADED, CHANGE_FILTERS} from '../constants/index'
 
 export function getData() {
     return function (dispatch) {
@@ -13,5 +9,9 @@ export function getData() {
             });
     };
 }
+
+export function changeFilters(payload) {
+    return {type: CHANGE_FILTERS, payload}
+};
 
 

@@ -8,10 +8,10 @@ import * as serviceWorker from './serviceWorker';
 import {render} from "react-dom";
 import {Provider} from "react-redux";
 import store from './js/store/index';
-import {addVehicle} from './js/actions/index'
+//import {addVehicle} from './js/actions/index'
 
 window.store = store;
-window.addVehicle = addVehicle;
+//window.addVehicle = addVehicle;
 
 //EDIT: ReactDOM.render(<App />, document.getElementById('root'));
 

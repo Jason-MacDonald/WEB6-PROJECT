@@ -4,7 +4,7 @@ import { getData } from '../../js/actions/index';
 
 export class ReduxVehicles extends Component {
     componentDidMount() {
-        //this.props.getData();
+        this.props.getData();
     }
 
     render() {
@@ -43,7 +43,7 @@ export class ReduxVehicles extends Component {
 // }
 
 function mapStateToProps (state) {
-    return { vehicles: state.remoteVehicles.filter(vehicle => vehicle.featured == true).slice(0, 8)};
+    return { vehicles: state.remoteVehicles.filter(vehicle => vehicle.featured === 1).slice(0, 8)};
 }
 
 export default connect(
