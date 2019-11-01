@@ -11,7 +11,7 @@ export class ReduxVehicles extends Component {
         return (
             <>
                 <div className='vehicle-content-main-div'>
-                    <div className="vehicles-wrapper">
+                    <div className="featured-vehicles-wrapper">
                         {this.props.vehicles.map(vehicle => (
                             <div className='vehicle-main-div'>
                                 <img alt='Vehicle' src={require('../../img/blue-flower.jpeg')} />

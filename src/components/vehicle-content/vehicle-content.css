@@ -3,11 +3,19 @@
     padding-top: 2%;
 }
 
+.featured-vehicles-wrapper {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    padding-bottom: 3%;
+}
+
 .vehicles-wrapper {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
     padding-bottom: 3%;
+    padding-top: 11%;
 }
 
 .page-nav-wrapper {
