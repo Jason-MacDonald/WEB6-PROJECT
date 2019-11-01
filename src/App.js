@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from './components/main/main';
 import MainContent from './components/main-content/main-content';
 import VehicleContent from './components/vehicle-content/vehicle-content';
+import ReduxVehicleContent from './components/vehicle-content/redux-vehicle-content'
 //import SearchForm from './components/search-form/search-form';
 import Footer from './components/footer/footer';
 import Nav from './components/nav/nav';
@@ -78,7 +79,7 @@ function Vehicles(props) {
     <div>
     <Navbar />
       {/* <Nav /> */}
-      <VehicleContent   
+      {/* <VehicleContent   
           make={queryString.make} 
           model={queryString.model} 
           body={queryString.body} 
@@ -88,7 +89,8 @@ function Vehicles(props) {
           minPrice={queryString.minPrice} 
           maxPrice={queryString.maxPrice} 
           minKms={queryString.minKms} 
-          maxKms={queryString.maxKms} />
+          maxKms={queryString.maxKms} /> */}
+      <ReduxVehicleContent />
       <Footer />
     </div>);
 }

@@ -3,45 +3,47 @@ import { connect } from "react-redux";
 import { getData } from '../../js/actions/index';
 
 export class ReduxVehicles extends Component {
-    constructor() {
-        super();
-    }
-
     componentDidMount() {
-        this.props.getData();
+        //this.props.getData();
     }
 
     render() {
         return (
-            <><div className='vehicle-content-main-div'>
-                <div className="vehicles-wrapper">
-                    {this.props.vehicles.map(vehicle => (
-                        <div className='vehicle-main-div'>
-                            <img alt='Vehicle' src={require('../../img/blue-flower.jpeg')} />
-                            <h4>{vehicle.year} {vehicle.make} {vehicle.model}</h4>
-                            <p>{vehicle.transmission}</p>
-                            <h4 id='kms'>{vehicle.kms} kms</h4>
-                            <h4 id='price'>${vehicle.price}</h4>
-                            <p id='location'>{vehicle.location}</p>
-                        </div>
-                    ))}
-                </div></div>
+            <>
+                <div className='vehicle-content-main-div'>
+                    <div className="vehicles-wrapper">
+                        {this.props.vehicles.map(vehicle => (
+                            <div className='vehicle-main-div'>
+                                <img alt='Vehicle' src={require('../../img/blue-flower.jpeg')} />
+                                <h4>{vehicle.year} {vehicle.make} {vehicle.model}</h4>
+                                <p>{vehicle.transmission}</p>
+                                <h4 id='kms'>{vehicle.kms} kms</h4>
+                                <h4 id='price'>${vehicle.price}</h4>
+                                <p id='location'>{vehicle.location}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </>
         );
     }
 }
 
-function mapStateToProps(state) {
-    //var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-    var vehicles = state.remoteVehicles;
+// function mapStateToProps(state) {
+//     //var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+//     var vehicles = state.remoteVehicles;
 
-    //const result = words.filter(word => word.length > 6);
-    const featuredVehicles = vehicles.filter(vehicle => vehicle.featured == true);
+//     //const result = words.filter(word => word.length > 6);
+//     const featuredVehicles = vehicles.filter(vehicle => vehicle.featured == true);
 
-    return {
-        //vehicles: state.remoteVehicles.slice(0, 10)
-        vehicles: featuredVehicles.slice(0, 10)
-    }
+//     return {
+//         //vehicles: state.remoteVehicles.slice(0, 10)
+//         vehicles: featuredVehicles.slice(0, 10)
+//     }
+// }
+
+function mapStateToProps (state) {
+    return { vehicles: state.remoteVehicles.filter(vehicle => vehicle.featured == true).slice(0, 8)};
 }
 
 export default connect(

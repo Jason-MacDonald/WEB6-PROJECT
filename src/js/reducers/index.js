@@ -1,9 +1,21 @@
-import { ADD_VEHICLE } from '../constants/index'
-import { DATA_LOADED } from '../constants/index'
+import { ADD_VEHICLE, CHANGE_VEHICLE_FILTERS, DATA_LOADED, GET_FILTERED_VEHICLES, GET_FILTERS } from '../constants/index'
 
 const initialState = {
     vehicles: [], // TODO: remove - testing array with vehicles added
-    remoteVehicles: []
+    remoteVehicles: [],
+    vehicleFilters: {
+        data: '',
+        make: '',
+        model: '',
+        body: '',
+        transmission: 'Automatic',
+        minYear: '',
+        maxYear: '',
+        minPrice: '',
+        maxPrice: '',
+        minKms: '',
+        maxKms: '100000'
+    }
 };
 
 function rootReducer(state = initialState, action) {
@@ -14,7 +26,7 @@ function rootReducer(state = initialState, action) {
             });
         case DATA_LOADED:
             return Object.assign({}, state, {
-                remoteVehicles: state.remoteVehicles.concat(action.payload)
+                remoteVehicles: action.payload //state.remoteVehicles.concat(action.payload)
             });
         default:
             return state;
