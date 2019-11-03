@@ -1,16 +1,31 @@
 import React from 'react';
 
+import { TextBoxComponent } from '@syncfusion/ej2-react-inputs';
+import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
+import { FormValidator, FormValidatorModel } from '@syncfusion/ej2-inputs';
+import { DialogComponent } from '@syncfusion/ej2-react-popups';
+
 import './contact-content.css'
+
+
 
 // Very basic React component which holds multiple Contact elements also created on the same script.
 class ContactContent extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
+    constructor() {
+        super();
+        
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-    //     }
-    // }
-    // TODO: Form functionality.
+    handleChange(event) {
+        this.setState({[event.target.id]: event.target.value});
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+    }
+
     render() {
         return (
             <div className="contact-content-main-div">
@@ -20,13 +35,20 @@ class ContactContent extends React.Component {
                     <Contact />
                     <Contact />
                 </div>
-                <form>
-                    <input type='text' placeholder='Name...' required></input>
+                <form onSubmit={this.handleSubmit}>
+                    <TextBoxComponent placeholder="First Name" floatLabelType="Auto" data-required-message='Required Field' />
+                    <TextBoxComponent placeholder="Last Name" floatLabelType="Auto" />
+                    <TextBoxComponent placeholder="Email" floatLabelType="Auto" />
+                    <TextBoxComponent placeholder="Phone" floatLabelType="Auto" />
+                    <TextBoxComponent id='default' multiline={true} floatLabelType="Auto" placeholder="Enter your message" ref={(scope) => { this.textareaObj = scope }}></TextBoxComponent>
+                    <ButtonComponent cssClass='e-info' type='Submit'>Submit Message</ButtonComponent>
+
+                    {/* <input type='text' placeholder='Name...' required></input>
                     <input type='text' placeholder='Email...'></input>
                     <input type='text' placeholder='Phone'></input>
                     <input type='text'></input>
                     <textarea></textarea>
-                    <input type='submit'></input>
+                    <input type='submit'></input> */}
                 </form>
             </div>
         )
