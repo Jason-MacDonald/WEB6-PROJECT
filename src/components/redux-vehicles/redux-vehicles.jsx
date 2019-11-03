@@ -14,7 +14,7 @@ export class ReduxVehicles extends Component {
                     <div className="featured-vehicles-wrapper">
                         {this.props.vehicles.map(vehicle => (
                             <div className='vehicle-main-div'>
-                                <img alt='Vehicle' src={require('../../img/blue-flower.jpeg')} />
+                                <img alt='Vehicle' src={require('../../img/LDV-T60-Busket.jpg')} />
                                 <h4>{vehicle.year} {vehicle.make} {vehicle.model}</h4>
                                 <p>{vehicle.transmission}</p>
                                 <h4 id='kms'>{vehicle.kms} kms</h4>

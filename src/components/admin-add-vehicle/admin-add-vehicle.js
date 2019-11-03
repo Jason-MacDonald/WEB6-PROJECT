@@ -2,7 +2,8 @@ import React from 'react';
 
 import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
 import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
-
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import {withRouter} from 'react-router-dom'
 
 import './admin-add-vehicle.css'
 
@@ -39,11 +40,15 @@ for (const [index, value] of dataSource[selectedMake][1].entries()) {
 class AddVehicleForm extends React.Component {
     constructor() {
         super();
+
+        this.goHome = this.goHome.bind(this)
         // TODO: Research further how this works.
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    
+    goHome() {
+        this.props.history.push('/vehicles/')
+      }
 
     // TODO: Research further how this works.
     handleSubmit(event) {
@@ -73,6 +78,9 @@ class AddVehicleForm extends React.Component {
             
         })
         .then(() => {
+            // New vehicle added popup
+            //this.goHome();
+            window.location = '/login/';
             console.log("New Vehicle Added!")
         })
         .catch(err => {
@@ -192,4 +200,4 @@ class AddVehicleForm extends React.Component {
     }
 }
 
-export default AddVehicleForm;
+export default withRouter(AddVehicleForm);

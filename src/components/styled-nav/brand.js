@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 
-import logo from "../../img/blue-flower.jpeg";
+import logo from "../../img/logosmall.jpg";
 
 const Brand = () => {
   return (

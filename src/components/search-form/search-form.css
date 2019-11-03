@@ -1,5 +1,4 @@
-.search-form-main-div {
-    
+.search-form-main-div form{ 
     background-color: rgb(9, 67, 98); 
     max-width: 500px;
     padding: 35px;
@@ -49,4 +48,17 @@ input.submit{
     background-color: rgb(43, 128, 226); 
     border: 0;
     color: white;
+}
+
+@media (max-width: 500px) {
+    .search-form-main-div select.inline-block {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 0 0 20px 0;
+    }
+
+    .search-form-main-div p {
+        display: none;
+    }
 }

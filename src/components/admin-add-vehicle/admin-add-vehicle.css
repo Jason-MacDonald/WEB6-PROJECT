@@ -1,8 +1,11 @@
 .add-vehicle-form-main-div {
     display: flex;
     justify-content: center;
-    width: 500px;
+    width: 100%;
     margin: auto;
+    background-color: aliceblue;
+    height: 800px;
+    
 }
 
 .add-vehicle-form-main-div input, .add-vehicle-form-main-div textarea, .add-vehicle-form-main-div select {
@@ -12,6 +15,9 @@
 }
 
 .add-vehicle-form-main-div form {
-    
-    width: 100%;
+    background-color: white;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

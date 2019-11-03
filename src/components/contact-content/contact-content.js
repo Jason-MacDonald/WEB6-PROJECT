@@ -2,8 +2,6 @@ import React from 'react';
 
 import { TextBoxComponent } from '@syncfusion/ej2-react-inputs';
 import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
-import { FormValidator, FormValidatorModel } from '@syncfusion/ej2-inputs';
-import { DialogComponent } from '@syncfusion/ej2-react-popups';
 
 import './contact-content.css'
 
@@ -35,7 +33,8 @@ class ContactContent extends React.Component {
                     <Contact />
                     <Contact />
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className='contact-form-main-div'>
+                    <h2>SEND US A MESSAGE</h2>
                     <TextBoxComponent placeholder="First Name" floatLabelType="Auto" data-required-message='Required Field' />
                     <TextBoxComponent placeholder="Last Name" floatLabelType="Auto" />
                     <TextBoxComponent placeholder="Email" floatLabelType="Auto" />

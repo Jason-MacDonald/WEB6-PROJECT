@@ -2,8 +2,10 @@
     background-color: blueviolet;
     /* height: 670px; */
     width: 100%;
-    background-image: url('../../img/blue-flower.jpeg');
-    background-size: 100%;
-    padding: 270px 10% 50px 10%;
+    background-image: url('../../img/car-yard.jpg');
+    background-size: cover;
+    padding: 150px 0 25px 5%;
 }
+
+
 

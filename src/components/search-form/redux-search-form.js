@@ -52,16 +52,16 @@ class SearchForm extends Component {
 
         this.state = {
             data: '',
-            make: '',
-            model: '',
-            body: '',
-            transmission: '',
-            minPrice: '',
-            maxPrice: '',
-            minYear: '',
-            maxYear: '',
-            minKms: '',
-            maxKms: ''
+            make: 'Any Make',
+            model: 'Any Model',
+            body: 'Any Body',
+            transmission: 'Any Transmission',
+            minPrice: 'Min Price',
+            maxPrice: 'Max Price',
+            minYear: 'Min Year',
+            maxYear: 'Max Year',
+            minKms: 'Min Kms',
+            maxKms: 'Max Kms'
         };
 
         this.goHome = this.goHome.bind(this)
@@ -135,7 +135,7 @@ class SearchForm extends Component {
                         <option>Tiptronic</option>
                     </select>
                     <select className="inline-block" id='minPrice' value={this.state.minPrice} onChange={this.handleChange}>
-                        <option>Any Price</option>
+                        <option>Min Price</option>
                         {priceOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
@@ -144,14 +144,14 @@ class SearchForm extends Component {
                     <p className="inline-block">to</p>
 
                     <select className="inline-block" id='maxPrice' value={this.state.maxPrice} onChange={this.handleChange}>
-                        <option>Any Price</option>
+                        <option>Max Price</option>
                         {priceOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
                     </select>
 
                     <select className="inline-block" id='minYear' value={this.state.minYear} onChange={this.handleChange}>
-                        <option>Any Year</option>
+                        <option>Min Year</option>
                         {yearOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
@@ -160,14 +160,14 @@ class SearchForm extends Component {
                     <p>to</p>
 
                     <select className="inline-block" id='maxYear' value={this.state.maxYear} onChange={this.handleChange}>
-                        <option>Any Year</option>
+                        <option>Max Year</option>
                         {yearOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
                     </select>
 
                     <select className="inline-block" id='minKms' value={this.state.minKms} onChange={this.handleChange}>
-                        <option>Any Kms</option>
+                        <option>Min Kms</option>
                         {kmsOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}
@@ -176,7 +176,7 @@ class SearchForm extends Component {
                     <p>to</p>
 
                     <select className="inline-block" id='maxKms' value={this.state.maxKms} onChange={this.handleChange}>
-                        <option>Any Kms</option>
+                        <option>Max Kms</option>
                         {kmsOptions.map((value, index) => {
                             return <option key={index}>{value}</option>
                         })}

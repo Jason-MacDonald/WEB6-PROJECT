@@ -2,6 +2,7 @@ div.login-form-main-div {
     display: flex;
     justify-content: center;
     padding-top: 150px;
+    background-color: aliceblue;
 }
 
 div.login-form-main-div input {

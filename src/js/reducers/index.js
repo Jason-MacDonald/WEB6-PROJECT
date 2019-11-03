@@ -4,16 +4,16 @@ const initialState = {
     remoteVehicles: [],
     vehicleFilters: {
         data: '',
-        make: '',
-        model: '',
-        body: '',
-        transmission: '',
-        minYear: '',
-        maxYear: '',
-        minPrice: '',
-        maxPrice: '',
-        minKms: '',
-        maxKms: ''
+        make: 'Any Make',
+        model: 'Any Model',
+        body: 'Any Body',
+        transmission: 'Any Transmission',
+        minYear: 'Min Year',
+        maxYear: 'Max Year',
+        minPrice: 'Min Price',
+        maxPrice: 'Max Price',
+        minKms: 'Min Kms',
+        maxKms: 'Max Kms'
     }
 };
 

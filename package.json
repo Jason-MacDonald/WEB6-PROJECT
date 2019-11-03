@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@syncfusion/ej2-dropdowns": "^17.3.21",
     "@syncfusion/ej2-react-buttons": "^17.3.19",
     "@syncfusion/ej2-react-inputs": "^17.3.21",
     "@syncfusion/ej2-react-navigations": "^17.3.19",

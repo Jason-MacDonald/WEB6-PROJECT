@@ -3,6 +3,7 @@
     padding: 100px 0 50px 0;
     justify-content: space-evenly;
     padding-top: 15%;
+    background-color: aliceblue;
 }
 
 .contact-content-main-div input, .contact-content-main-div textarea {
@@ -12,5 +13,5 @@
 }
 
 .contact-content-main-div form {
-    
+    background-color: white;
 }
