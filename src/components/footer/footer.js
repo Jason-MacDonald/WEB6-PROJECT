@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="footer-main-div">
             <div className='footer-contact'>
                 <h2>Contact</h2>
-                <Contact s/>
+                <Contact />
                 <Contact />
             </div>
 
@@ -48,7 +48,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div className="contact">
-                <img alt='Nothing Yet' />
+                {/* <img alt='Nothing Yet' /> */}
                 <p>John Smith</p>
                 <p>021 123 456</p>
                 <p>john-smith@thecarcompany.co.nz</p>

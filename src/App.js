@@ -39,7 +39,7 @@ function Index() {
       {/* <SearchForm /> */}
       {/* <MainContent /> */}
       <ReduxVehicles />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

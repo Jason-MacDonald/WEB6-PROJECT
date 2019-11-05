@@ -46,7 +46,7 @@ function mapStateToProps(state) {
     filteredVehicles = state.vehicleFilters.maxPrice != 'Max Price' ? filteredVehicles.filter(vehicle => vehicle.price < state.vehicleFilters.maxPrice) : filteredVehicles;
     filteredVehicles = state.vehicleFilters.minKms != 'Min Kms' ? filteredVehicles.filter(vehicle => vehicle.kms > state.vehicleFilters.minKms) : filteredVehicles;
     filteredVehicles = state.vehicleFilters.maxKms != 'Max Kms' ? filteredVehicles.filter(vehicle => vehicle.kms < state.vehicleFilters.maxKms) : filteredVehicles;
-    return { vehicles: filteredVehicles.slice(0, 50)};
+    return { vehicles: filteredVehicles.slice(0, 25)};
 }
 
 export default connect(

@@ -6,7 +6,13 @@
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.151), 10px 10px 8px  rgba(0, 0, 0, 0.200), 15px 15px 8px  rgba(0, 0, 0, 0.250);
     padding: 20px; 
     border-radius: 5px;
+    transform:scale(1, 1);
+    transition: 0.5s;
 }
+
+.vehicle-main-div:hover  {  
+        transform:scale(1.1, 1.1);
+} 
 
 .vehicle-main-div img {
     width: 250px;

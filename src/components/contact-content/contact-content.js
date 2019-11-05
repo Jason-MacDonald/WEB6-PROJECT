@@ -60,7 +60,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div>
-                <img alt='Nothing Yet' />
+                {/* <img alt='Nothing Yet' /> */}
                 <p>John Smith</p>
                 <p>021 123 456</p>
                 <p>john-smith@thecarcompany.co.nz</p>
