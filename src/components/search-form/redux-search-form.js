@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import {changeFilters} from '../../js/actions/index'
 import {withRouter} from 'react-router-dom'
 

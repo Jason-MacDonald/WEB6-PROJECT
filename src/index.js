@@ -5,8 +5,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import {render} from "react-dom";
-import {Provider} from "react-redux";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
 import store from './js/store/index';
 //import {addVehicle} from './js/actions/index'
 

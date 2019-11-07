@@ -10,7 +10,7 @@ import ReduxVehicleContent from './components/vehicle-content/redux-vehicle-cont
 //import SearchForm from './components/search-form/search-form';
 import Footer from './components/footer/footer';
 //import Nav from './components/nav/nav';
-import LoginForm from "./components/login-form/login-form";
+import ReduxLoginForm from "./components/login-form/login-form";
 import FinanceContent from './components/finance-content/finance-content'
 import AboutContent from './components/about-content/about-content'
 import ContactContent from './components/contact-content/contact-content'
@@ -102,7 +102,7 @@ function Login() {
 
       {/* <Nav/> */}
       <Navbar />
-      <LoginForm />
+      <ReduxLoginForm />
       <AddVehicleForm />
       <DeleteVehicleForm />
     </div>);
