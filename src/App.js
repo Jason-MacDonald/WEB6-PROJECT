@@ -44,10 +44,7 @@ function Index() {
   );
 }
 
-function Vehicles(props) {
-
-
-
+function Vehicles() {
   return (
     <div>
       <Navbar />

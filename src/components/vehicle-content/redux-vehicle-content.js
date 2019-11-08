@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getData } from '../../js/actions/index';
 
+// Imports the styling for Vehicle Content.
 import './vehicle-content.css';
-import './vehicle.css';
 
 export class ReduxVehicleContent extends Component {
+    // Updates vehicle information in the database whenever this component is mounted incase it has changed.
     componentDidMount() {
         this.props.getData();
     }
@@ -31,12 +32,12 @@ export class ReduxVehicleContent extends Component {
 }
 
 function mapStateToProps(state) {
+    // Super ugly but filters the vehicles by each criteria if criteria has been selected.
     let filteredVehicles = state.remoteVehicles;
     let vehicleFilters = state.vehicleFilters;
     console.log (vehicleFilters);
 
-    filteredVehicles = state.vehicleFilters.make != 'Any Make' ? state.remoteVehicles.filter(vehicle => vehicle.make == state.vehicleFilters.make) : filteredVehicles;
-    
+    filteredVehicles = state.vehicleFilters.make != 'Any Make' ? state.remoteVehicles.filter(vehicle => vehicle.make == state.vehicleFilters.make) : filteredVehicles; 
     filteredVehicles = state.vehicleFilters.model != 'Any Model' ? filteredVehicles.filter(vehicle => vehicle.model == state.vehicleFilters.model) : filteredVehicles;
     filteredVehicles = state.vehicleFilters.body != 'Any Body' ? filteredVehicles.filter(vehicle => vehicle.body == state.vehicleFilters.body) : filteredVehicles;
     filteredVehicles = state.vehicleFilters.transmission != 'Any Transmission' ? filteredVehicles.filter(vehicle => vehicle.transmission == state.vehicleFilters.transmission) : filteredVehicles;

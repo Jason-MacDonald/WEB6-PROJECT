@@ -9,6 +9,7 @@ const Footer = () => {
             <div className='footer-contact'>
                 <h2>Contact</h2>
                 <Contact />
+                <br />
                 <Contact />
             </div>
 

@@ -1,3 +1,4 @@
+// Pure magic ahead! Creates the store and applies middleware.
 import {createStore, compose, applyMiddleware} from "redux";
 import rootReducer from "../reducers/index";
 import thunk from "redux-thunk";
@@ -10,5 +11,3 @@ const store = createStore(
 );
 
 export default store;
-
-// Action > Dispatcher > Store > View 

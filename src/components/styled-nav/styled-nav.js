@@ -1,3 +1,6 @@
+// First look at styled components. 
+// Rather fancy but need figure out how it is working.
+
 import React, { Component } from 'react'
 import Navbar from './navbar';
 
