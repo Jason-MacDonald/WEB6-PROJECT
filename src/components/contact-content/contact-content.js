@@ -12,14 +12,14 @@ import './contact-content.css'
 // Very basic React component which holds multiple Contact elements also currently 
 // created on the same script.
 class ContactContent extends Component {
-    constructor(props) {
-        super(props);
+    //constructor(props) {
+        //super(props);
         
         // EDIT: Cannot be used with Synfusion components.
         // The following statements bind the methods to this components.
         //this.handleChange = this.handleChange.bind(this);
         //this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    //}
 
     // Whenever a 
     // handleChange(event) {

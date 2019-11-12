@@ -8,12 +8,13 @@ export class ReduxVehicles extends Component {
     }
 
     render() {
+        let index = 0;
         return (
             <>
                 <div className='vehicle-content-main-div'>
                     <div className="featured-vehicles-wrapper">
                         {this.props.vehicles.map(vehicle => (
-                            <div className='vehicle-main-div'>
+                            <div className='vehicle-main-div' key={index++}>
                                 <img alt='Vehicle' src={require('../../img/LDV-T60-Busket.jpg')} />
                                 <h4>{vehicle.year} {vehicle.make} {vehicle.model}</h4>
                                 <p>{vehicle.transmission}</p>

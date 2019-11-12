@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
 import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
-import { DropDownList } from '@syncfusion/ej2-dropdowns';
+//import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import {withRouter} from 'react-router-dom'
 
 import './admin-add-vehicle.css'
