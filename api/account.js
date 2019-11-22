@@ -28,6 +28,31 @@ function getAccount(req, res, next) {
     .catch(error => res.status(500).json(error))
 };
 
+function getAccountByUserDetails(req, res, next) {
+    const {knex} = req.app.locals;
+    const {username} = req.params;
+    const {password} = req.params;
+    console.log(username)
+    console.log(password)
+    knex
+        .select('name', 'email')
+        .from('account')
+        .where({name: `${username}`, password: `${password}`})
+        .then(data => {
+            if(data.length > 0) {
+                return res.status(200).json(data);
+            }
+            else {
+                return res.status(404).json(`Account with the supplied credentials ${id} could not be found.`)
+            }
+    })
+    .catch(error => res.status(500).json(error))
+};
+
+
+
+
+
 // postAccount      Creates a new Account Record with an auto-increment ID.
 function postAccount(req, res, next) {
     const {knex} = req.app.locals;
@@ -87,6 +112,7 @@ function deleteAccount(req, res, next) {
 module.exports = {
     getAllAccounts,
     getAccount,
+    getAccountByUserDetails,
     postAccount,
     patchAccount,
     deleteAccount

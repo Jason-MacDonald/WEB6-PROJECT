@@ -19,6 +19,12 @@ export function changeFilters(payload) {
 };
 
 // TODO: implement proper login functionality, maybe attempt with token such as JWS.
-export function login(payload) {
-    return {type: LOG_IN, payload}
+export function login(username, password) {
+    return function (dispatch) {
+        return fetch(`http://localhost:4200/api/accounts/${username}/${password}`)
+            .then(res => res.json())
+            .then(json => {
+                dispatch({type: LOG_IN, payload: json})
+            })
+    }
 };

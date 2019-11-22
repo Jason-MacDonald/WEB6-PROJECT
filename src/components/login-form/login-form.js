@@ -11,7 +11,7 @@ import './login-form.css';
 // Adds dispatch of the login action to this props.
 function mapDispatchToProps(dispatch) {
     return {
-        login: account => dispatch(login(account))
+        login: account => dispatch(login(account.username, account.password))
     };
 }
 
@@ -40,8 +40,8 @@ class LoginForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        const account = this.state;
-        this.props.login(account);
+        // const account = this.state;
+        this.props.login(this.state);
     }
 
     render() {

@@ -43,6 +43,7 @@ router.get('/featured', routes.vehicleList.getFeaturedVehicles);
 // account requests
 router.get('/accounts', routes.accountList.getAllAccounts);
 router.get('/accounts/:id', middleware.checkID, routes.accountList.getAccount);
+router.get('/accounts/:username/:password', routes.accountList.getAccountByUserDetails);
 router.post('/accounts', jsonParser, routes.accountList.postAccount);
 router.patch('/accounts/:id', jsonParser, middleware.checkID, routes.accountList.patchAccount);
 router.delete('/accounts/:id', middleware.checkID, routes.accountList.deleteAccount);
