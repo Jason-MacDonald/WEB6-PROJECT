@@ -20,7 +20,7 @@ const initialState = {
     },
     account : {
         username: '',
-        password: ''
+        email: ''
     }
 };
 

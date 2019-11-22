@@ -92,18 +92,12 @@ function Contact() {
 function Login() {
   return (
     <div>
-
-      <br />
-      {/* <TestForm /> */}
-      {/* <VehicleList /> */}
-
-      {/* <Nav/> */}
       <Navbar />
       <ReduxLoginForm />
-      <AddVehicleForm />
-      <DeleteVehicleForm />
     </div>);
 }
+
+
 
 // Returns the appropriate page based on the path using React Router.
 function App() {

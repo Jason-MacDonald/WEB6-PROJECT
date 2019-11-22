@@ -2,10 +2,11 @@ import React from 'react';
 
 import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
 import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
-//import { DropDownList } from '@syncfusion/ej2-dropdowns';
+
 import {withRouter} from 'react-router-dom'
 
 import './admin-add-vehicle.css'
+import store from '../../js/store';
 
 // Setup for dropdowns
 const dataSource = [
@@ -91,112 +92,116 @@ class AddVehicleForm extends React.Component {
     // Returns a form. When submitted, this state (value) = ref
     // TODO: Research further how this works.
     render() {
-        //Sets up all the input data sources.
-        // TODO: Move seperately to be used by other inputs.
-        const bodyOptions = ['Convertable', 'Coupe', 'Hatchback', 'Sedan', 'Station Wagon', 'SUV', 'Ute', 'Van'];
+        if(store.getState().account.username != "") {
+            console.log(store.getState().account.username)
+        
+            //Sets up all the input data sources.
+            // TODO: Move seperately to be used by other inputs.
+            const bodyOptions = ['Convertable', 'Coupe', 'Hatchback', 'Sedan', 'Station Wagon', 'SUV', 'Ute', 'Van'];
 
-        //Sets up the appropriate selection option values.
-        const yearOptions = [];
-        const currentYear = new Date().getFullYear();
-        for (let i = (currentYear); i > (currentYear - 50); i--) {
-            yearOptions.push(i);
+            //Sets up the appropriate selection option values.
+            const yearOptions = [];
+            const currentYear = new Date().getFullYear();
+            for (let i = (currentYear); i > (currentYear - 50); i--) {
+                yearOptions.push(i);
+            }
+
+            const priceOptions = [];
+            for (let i = 1000; i < 76000; i += 2000) {
+                priceOptions.push(i);
+            }
+
+            const kmsOptions = [];
+            for (let i = 10000; i < 300000; i += 10000){
+                kmsOptions.push(i);
+            }
+
+            return (
+                
+                <div className='add-vehicle-form-main-div'>
+                    <form onSubmit={this.handleSubmit}>
+                        <h2>Add a Car</h2>
+                        {/* <input ref={(ref) => {this.make = ref}} type="text" id='make' placeholder="Make..." name='make' required/> */}
+                        <select ref={(ref) => {this.make = ref}} id='make' name='make' required>
+                            <option value="" disabled selected hidden>Make...</option>
+                            {makeItems}
+                        </select>
+                        {/* <input ref={(ref) => {this.model = ref}}  type="text" placeholder="Model..." name='model' required/> */}
+                        <select ref={(ref) => {this.model = ref}} id='model' name='model' required>
+                        <option value="" disabled selected hidden>Model...</option>
+                            {modelItems}
+                        </select>                   
+                        {/* <input ref={(ref) => {this.body = ref}}  type="text" placeholder="Body..." name='body'/> */}
+                        <select ref={(ref) => {this.body = ref}} id='body' name='body' required>
+                            <option value="" disabled selected hidden>body...</option>
+                            {bodyOptions.map((value, index) => {
+                                return <option key={index}>{value}</option>
+                            })}
+                        </select> 
+                        
+
+                        {/* <input ref={(ref) => {this.transmission = ref}}  type="text" placeholder="Transmission..." name='transmission' required/> */}
+                        <select ref={(ref) => {this.transmission = ref}} id='transmission' name='transmission' required>
+                            <option value="" disabled selected hidden>Transmission...</option>
+                            <option>Manual</option>
+                            <option>Automatic</option>
+                            <option>Tiptronic</option>
+                        </select>
+                        
+                        {/* <input ref={(ref) => {this.price = ref}}  type="number" placeholder="Price..." name='price' required/> */}
+                        <select ref={(ref) => {this.price = ref}} name='price' id='price' required>
+                            <option value="" disabled selected hidden>Price...</option>
+                            {priceOptions.map((value, index) => {
+                                return <option key={index}>{value}</option>
+                            })}
+                        </select> 
+                        
+                        {/* <input ref={(ref) => {this.year = ref}}  type="number" placeholder="Year..." name='year' required/> */}
+                        <select ref={(ref) => {this.year = ref}} name='year' id='year' required>
+                            <option value="" disabled selected hidden>Year...</option>
+                            {yearOptions.map((value, index) => {
+                                return <option key={index}>{value}</option>
+                            })}
+                        </select> 
+                        
+                        {/* <input ref={(ref) => {this.kms = ref}}  type="number" placeholder="Kms..." name='kms' required/> */}
+                        <select ref={(ref) => {this.kms = ref}} name=''>
+                        <option value="" disabled selected hidden>Kms...</option>
+                            {kmsOptions.map((value, index) => {
+                                return <option key={index}>{value}</option>
+                            })}
+                        </select>   
+
+                        {/* <input ref={(ref) => {this.seats = ref}}  type="number" placeholder="Seats..." name='seats' required/> */}
+                        <select ref={(ref) => {this.seats = ref}} id='seats' name='seats'>
+                            <option value="" disabled selected hidden>Seats...</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                        </select>
+                        
+                        {/* <input ref={(ref) => {this.location = ref}}  type="text" placeholder="Location..." name='location' required/> */}
+                        <select ref={(ref) => {this.location = ref}} name='location'>
+                            <option value="" disabled selected hidden>Location...</option>
+                            <option>Nelson</option>
+                            <option>Richmond</option>
+                            <option>Tahunanui</option>
+                        </select>
+
+                        <textarea ref={(ref) => {this.description = ref}}  placeholder="Description" name='description' required/>
+                        <CheckBoxComponent ref={(ref) => {this.featured = ref}}  type="checkbox" placeholder="Featured..." name='featured'/>
+
+                        <ButtonComponent cssClass='e-info' className="submit" type="submit">Add Vehicle</ButtonComponent>
+                    </form>
+                </div>
+            )
         }
-
-        const priceOptions = [];
-        for (let i = 1000; i < 76000; i += 2000) {
-            priceOptions.push(i);
-        }
-
-        const kmsOptions = [];
-        for (let i = 10000; i < 300000; i += 10000){
-            kmsOptions.push(i);
-        }
-
-
-
-        return (
-            <div className='add-vehicle-form-main-div'>
-                <form onSubmit={this.handleSubmit}>
-                    <h2>Add a Car</h2>
-                    {/* <input ref={(ref) => {this.make = ref}} type="text" id='make' placeholder="Make..." name='make' required/> */}
-                    <select ref={(ref) => {this.make = ref}} id='make' name='make' required>
-                        <option value="" disabled selected hidden>Make...</option>
-                        {makeItems}
-                    </select>
-                    {/* <input ref={(ref) => {this.model = ref}}  type="text" placeholder="Model..." name='model' required/> */}
-                    <select ref={(ref) => {this.model = ref}} id='model' name='model' required>
-                    <option value="" disabled selected hidden>Model...</option>
-                        {modelItems}
-                    </select>                   
-                    {/* <input ref={(ref) => {this.body = ref}}  type="text" placeholder="Body..." name='body'/> */}
-                    <select ref={(ref) => {this.body = ref}} id='body' name='body' required>
-                        <option value="" disabled selected hidden>body...</option>
-                        {bodyOptions.map((value, index) => {
-                            return <option key={index}>{value}</option>
-                        })}
-                    </select> 
-                    
-
-                    {/* <input ref={(ref) => {this.transmission = ref}}  type="text" placeholder="Transmission..." name='transmission' required/> */}
-                    <select ref={(ref) => {this.transmission = ref}} id='transmission' name='transmission' required>
-                        <option value="" disabled selected hidden>Transmission...</option>
-                        <option>Manual</option>
-                        <option>Automatic</option>
-                        <option>Tiptronic</option>
-                    </select>
-                    
-                    {/* <input ref={(ref) => {this.price = ref}}  type="number" placeholder="Price..." name='price' required/> */}
-                    <select ref={(ref) => {this.price = ref}} name='price' id='price' required>
-                        <option value="" disabled selected hidden>Price...</option>
-                        {priceOptions.map((value, index) => {
-                            return <option key={index}>{value}</option>
-                        })}
-                    </select> 
-                    
-                    {/* <input ref={(ref) => {this.year = ref}}  type="number" placeholder="Year..." name='year' required/> */}
-                    <select ref={(ref) => {this.year = ref}} name='year' id='year' required>
-                        <option value="" disabled selected hidden>Year...</option>
-                        {yearOptions.map((value, index) => {
-                            return <option key={index}>{value}</option>
-                        })}
-                    </select> 
-                    
-                    {/* <input ref={(ref) => {this.kms = ref}}  type="number" placeholder="Kms..." name='kms' required/> */}
-                     <select ref={(ref) => {this.kms = ref}} name=''>
-                     <option value="" disabled selected hidden>Kms...</option>
-                        {kmsOptions.map((value, index) => {
-                            return <option key={index}>{value}</option>
-                        })}
-                     </select>   
-
-                    {/* <input ref={(ref) => {this.seats = ref}}  type="number" placeholder="Seats..." name='seats' required/> */}
-                    <select ref={(ref) => {this.seats = ref}} id='seats' name='seats'>
-                        <option value="" disabled selected hidden>Seats...</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                    </select>
-                    
-                    {/* <input ref={(ref) => {this.location = ref}}  type="text" placeholder="Location..." name='location' required/> */}
-                    <select ref={(ref) => {this.location = ref}} name='location'>
-                        <option value="" disabled selected hidden>Location...</option>
-                        <option>Nelson</option>
-                        <option>Richmond</option>
-                        <option>Tahunanui</option>
-                    </select>
-
-                    <textarea ref={(ref) => {this.description = ref}}  placeholder="Description" name='description' required/>
-                    <CheckBoxComponent ref={(ref) => {this.featured = ref}}  type="checkbox" placeholder="Featured..." name='featured'/>
-
-                    <ButtonComponent cssClass='e-info' className="submit" type="submit">Add Vehicle</ButtonComponent>
-                </form>
-            </div>
-        )
+        else return null
     }
 }
 
